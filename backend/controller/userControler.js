@@ -39,7 +39,7 @@ catch(e){
 
 const registerUser = async(req,res) =>{
     try{
-    const {name,email,password,confirm_password} = req.body;
+    const {name,email,password,Confirm_Password} = req.body;
 
     const exists = await userModel.findOne({email:email});
     if(exists){
@@ -53,7 +53,7 @@ const registerUser = async(req,res) =>{
     if(password.length<8){
         return res.json({success:false,message:"please enter strong password and min 8 digit"})
     }
-    if(password !== confirm_password){
+    if(password !== Confirm_Password){
         return res.json({success:false,message:"password not match"})
     }
    // hashing user pass
