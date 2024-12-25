@@ -11,7 +11,7 @@ export const  StoreContext = createContext(null);
     const[cartItem ,setCartItem ] = useState({});
     const [fav,setFav] = useState({});
     
-    const url = "http://localhost:4000";
+    const url = "https://fooddel-backend3.onrender.com";
 
 
     const [token ,setToken ] = useState("");

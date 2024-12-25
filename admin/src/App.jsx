@@ -18,7 +18,7 @@ const App = () => {
   const { isDarkTheme } = useTheme();
 
   
-  const url = 'http://localhost:4000';
+  const url = 'https://fooddel-backend3.onrender.com';
   const [autoCloseTime, setAutoCloseTime] = useState(1000);
 
   useEffect(() => {
