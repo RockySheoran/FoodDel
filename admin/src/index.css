@@ -1,0 +1,69 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+  font-family: outfit;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  
+}
+*::-webkit-scrollbar{
+  display: none;
+}
+body{
+  min-height: 100vh;
+  background-color: #fcfcfc;
+
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+hr{
+    border:none;
+    height: 1px;
+    background-color: #a9a9a9;
+}
+
+.order-item{
+  grid-template-columns: 0.5fr 2fr 2fr 1fr 1fr 1fr;
+  align-items: start;
+    
+}
+
+@media (max-width:1000px){
+  .order-item{
+    grid-template-columns: 0.7fr 1.5fr  1.7fr;
+
+  }
+}
+.Toastify__toast-container {
+  top: 70px !important; /* Move the toast up by 100px */
+  width: 50% !important; 
+  right: 1px !important; 
+  margin-left: auto !important;
+   /* Adjust width for smaller screens */
+}
+
+@media (max-width: 768px) {
+  .Toastify__toast-container {
+    top: 50px !important; /* Move the toast up by 100px */
+    width: 50% !important; 
+    right: 1px !important; 
+    margin-left: auto !important;
+     /* Adjust width for smaller screens */
+  }
+
+  .Toastify__toast {
+  
+    width: 100% !important; 
+     /* Ensure the toast fills the screen width on mobile */
+  }
+}
