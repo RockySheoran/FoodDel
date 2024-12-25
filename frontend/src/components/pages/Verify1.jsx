@@ -7,7 +7,7 @@ import axios from 'axios';
 import { useTheme } from '../StoreContext/ThemeProvider.jsx';
 
 
-const Verify = () => {
+const Verify1 = () => {
   const [searchParams] = useSearchParams();
   const success = searchParams.get('success');
   const orderId = searchParams.get('orderId');
@@ -40,4 +40,4 @@ const Verify = () => {
   );
 };
 
-export default Verify;
+export default Verify1;

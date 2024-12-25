@@ -14,7 +14,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import MyOrder from './components/pages/MyOrder'
 import { useTheme } from './components/StoreContext/ThemeProvider'
 import Fav_Item from './components/pages/Fav_Item'
-import Verify from './components/pages/verify'
+import Verify1 from './components/pages/Verify1'
+
+
 
 
 
@@ -65,7 +67,7 @@ function App() {
       <Route path='/cart'  element={<Cart loginCheck={loginCheck} setLoginCheck ={setLoginCheck}  />}/>
       <Route path='/order'  element={<PlaceOrder />}/>
       <Route path='/'  element={<Home/>}/>
-      <Route path='/verify'  element={<Verify/>}/>
+      <Route path='/verify'  element={<Verify1/>}/>
       <Route path='/myorders'  element={<MyOrder/>}/>
       <Route path='/favorite'  element={<Fav_Item/>}/>
       
