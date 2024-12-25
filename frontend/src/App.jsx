@@ -10,10 +10,11 @@ import { ToastContainer, toast } from 'react-toastify';
 import Register from './components/Navbar_Attribute_Page/Register'
 import Login from './components/Navbar_Attribute_Page/Login'
 import 'react-toastify/dist/ReactToastify.css';
-import Verify from './components/pages/verify'
+
 import MyOrder from './components/pages/MyOrder'
 import { useTheme } from './components/StoreContext/ThemeProvider'
 import Fav_Item from './components/pages/Fav_Item'
+import Verify from './components/pages/verify'
 
 
 
