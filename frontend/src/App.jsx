@@ -15,7 +15,8 @@ import MyOrder from './components/pages/MyOrder'
 import { useTheme } from './components/StoreContext/ThemeProvider'
 import Fav_Item from './components/pages/Fav_Item'
 import Verify1 from './components/pages/Verify1'
-import ContactUs from './components/pages/ContactUS'
+import { ContactUs } from './components/pages/ContactUS'
+
 
 
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { useTheme } from "../StoreContext/ThemeProvider";
 
-const ContactUs = () => {
+export const ContactUs = () => {
      const { isDarkTheme } = useTheme();
      const handleSumbit =(e) =>{
         e.preventDefault();
@@ -68,4 +68,3 @@ const ContactUs = () => {
   );
 };
 
-export default ContactUs;
