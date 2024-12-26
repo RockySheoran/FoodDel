@@ -4,12 +4,16 @@ import { StoreContext } from '../StoreContext/StoreContext';
 import axios from 'axios';
 import { assets } from '../../assets/frontend_assets/assets';
 import { useTheme } from '../StoreContext/ThemeProvider';
+import ReactLoading from 'react-loading';
+import { toast } from 'react-toastify';
 
 
 const MyOrder = () => {
   const { url, token } = useContext(StoreContext);
   const [data, setData] = useState([]);
   const { isDarkTheme } = useTheme();
+const [loding,setLoding] = useState(false)
+
 
   const fetchOrders = async () => {
     const response = await axios.post(
@@ -17,7 +21,15 @@ const MyOrder = () => {
       {},
       { headers: { token } }
     );
+    if(response.data.success){
+                setLoding(true);
+                toast.success("Data fetched")
     setData(response.data.data);
+    }else {
+          toast.error("Error");
+        }
+    
+
   };
 
   useEffect(() => {
@@ -29,6 +41,13 @@ const MyOrder = () => {
   return (
     <div className={`my-order mx-12 container ${isDarkTheme ? 'text-white' : 'text-black'}`}>
       <h2>My Order</h2>
+     
+      { !loding ?
+          <div className="loading-div  container flex justify-center items-center">
+                <ReactLoading type={'spin'} color={'red'} height={'100px'} width={'100px'} />
+                </div>
+          
+          :
       <div className="container flex flex-col gap-5 mt-8 my-3 justify-center">
         {data.map((order, index) => {
           return (
@@ -61,6 +80,7 @@ const MyOrder = () => {
           );
         })}
       </div>
+}
     </div>
   );
 };
