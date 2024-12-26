@@ -22,7 +22,7 @@ const [loding,setLoding] = useState(false)
       { headers: { token } }
     );
     if(response.data.success){
-                setLoding(true);
+        setLoding(true);
                 toast.success("Data fetched")
     setData(response.data.data);
     }else {
