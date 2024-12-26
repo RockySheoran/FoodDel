@@ -76,10 +76,10 @@ const Login = ({ setLoginCheck, loginCheck, setloginRegister, loginRegister }) =
           />
 
           {/* Password */}
-          <label htmlFor="password" className="relative py-1 left-2">
+          <label htmlFor="password" className="relative overflow-y-hidden py-1 left-2">
             Password:
           </label>
-          <div className="pass_In px-0.5 h-9">
+          <div className="pass_In px-0.5 h-9 overflow-y-hidden">
             <input
               onChange={onchangeHandler}
               value={data.password}
@@ -88,7 +88,7 @@ const Login = ({ setLoginCheck, loginCheck, setloginRegister, loginRegister }) =
               placeholder="Enter your Password"
               id="Password"
               required
-              className={`ml-3 px-0.5 h-7 w-full rounded ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
+              className={`ml-3 px-0.5  h-7 w-full rounded ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
             />
          
               <span onClick={() => setpassShow({ ...passShow, password: !passShow.password })}  className='relative cursor-pointer z-100 bottom-[25px] left-[265px] text-2xl w-5  ' id='password'>{passShow.password == false? <IoEye />: <IoEyeOff />}</span>

@@ -99,7 +99,7 @@ const Register = ({ setLoginCheck, loginCheck, setloginRegister, loginRegister }
           <label htmlFor="password" className="relative py-1 left-2">
             Password:
           </label>
-          <div className="pass_In px-0.5 h-9">
+          <div className="pass_In px-0.5 h-9 overflow-y-hidden">
             <input
               onChange={onchangeHandler}
               value={data.password}
@@ -119,7 +119,7 @@ const Register = ({ setLoginCheck, loginCheck, setloginRegister, loginRegister }
           <label htmlFor="Confirm_Password" className="relative pb-1 left-2">
             Confirm Password:
           </label>
-          <div className="pass_In px-0.5 mb-1 h-9">
+          <div className="pass_In px-0.5 mb-1 h-9 overflow-y-hidden">
             <input
               onChange={onchangeHandler}
               value={data.Confirm_Password}
