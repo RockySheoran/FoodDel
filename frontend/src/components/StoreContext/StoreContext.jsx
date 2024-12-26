@@ -4,8 +4,9 @@ import { food_list } from "../../assets/frontend_assets/assets";
 import { use } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-
-
+import { MdFavorite, MdShoppingCartCheckout } from "react-icons/md";
+import { IoMdAdd } from "react-icons/io";
+import { CiCircleRemove } from "react-icons/ci";
 export const  StoreContext = createContext(null);
 
  const StoreContextProvider = (props) => {
@@ -35,7 +36,11 @@ export const  StoreContext = createContext(null);
       
           return filteredCart;
         });
-        toast.info("Item add to cart")
+        toast.info(
+          <span className="flex gap-0.5">
+            Item <IoMdAdd className="relative top-1"/> to <MdShoppingCartCheckout className="inline-block relative top-1 text-lg" />
+          </span>,
+        );
       
         if (token) {
           await axios.post(url + "/api/cart/add", { itemId }, { headers: { token } });
@@ -56,7 +61,9 @@ export const  StoreContext = createContext(null);
       
           return filteredCart;
         });
-        toast.warning("Item remove to cart")
+        toast.warning( <span className="flex gap-1">
+          Item <CiCircleRemove  className="relative top-1"/> to <MdShoppingCartCheckout className="inline-block relative top-1 text-lg" />
+        </span>,)
       
         if (token && cartItem[itemId] > 0) {
           await axios.post(url + "/api/cart/remove", { itemId }, { headers: { token } });
@@ -126,7 +133,7 @@ export const  StoreContext = createContext(null);
 
 
         })
-        toast.success("fav item add ")
+        toast.success(<span className="flex gap-0.5 "> <MdFavorite  className="relative top-1 "/> item add</span>)
         if (token) {
           await axios.post(url + "/api/favorite/addFav", { itemId }, { headers: { token } });
         }
@@ -144,7 +151,7 @@ export const  StoreContext = createContext(null);
 
 
         })
-        toast.warning("UnFavorite  successful")
+        toast.warning(<span className="flex gap-0.5 "> <MdFavorite  className="relative top-1 "/> item remove</span>)
         if (token && fav[itemId] > 0) {
           await axios.post(url + "/api/favorite/remFav", { itemId }, { headers: { token } });
         }

@@ -52,15 +52,15 @@ const Footer = () => {
         </div>
         <div className="footer_end sm:col-span-1 md:pl-7">
           <h4>GET IN TOUCH</h4>
-          <ul className="flex flex-col gap-1 sm:gap-1.5">
-            <li>+91 XXXXXXXXXX</li>
-            <li>contact@xyz.com</li>
+          <ul className="flex flex-col gap-1 mr-2 sm:gap-1.5">
+            <li className=' w-60 mr-6 relative right-5   overflow-visible  '>+91 XXXXXXXXXX</li>
+            <li className=' w-60 mr-6 relative right-5   overflow-visible '>contact@xyz.com</li>
           </ul>
         </div>
       </div>
       <hr className={`container w-max h-4 ${isDarkTheme ? 'border-gray-600' : 'border-gray-400'}`} />
       <div className="footer_copyright flex justify-center">
-        <p className="flex gap-2 text-center sm:text-1.5xl text-1xl">
+        <p className="flex gap-2 text-center sm:text-1.5xl text-[14px] md:text-2xl">
           Copyright 2024 © xyz.com All rights Reserved
         </p>
       </div>

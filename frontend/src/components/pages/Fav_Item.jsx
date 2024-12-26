@@ -8,7 +8,7 @@ const Fav_Item = () => {
      const { isDarkTheme } = useTheme();
 
   return (
-    <div className={`container mb-20 text-center ${isDarkTheme ? 'text-white' : 'text-black'}`} id="food-display">
+    <div className={`container   mb-20 text-center ${isDarkTheme ? 'text-white' : 'text-black'}`} id="food-display">
       <h1>Your Favorite Items</h1>
       <div className="food_Container gap-4 grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 my-6 justify-items-center md:grid-cols-3 mx-auto">
         {food_list.map((item, index) => {

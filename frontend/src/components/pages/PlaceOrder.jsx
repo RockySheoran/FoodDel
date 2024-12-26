@@ -80,7 +80,7 @@ const PlaceOrder = () => {
                   value={formData.FirstName}
                   onChange={handleChange}
                   placeholder="Enter your First Name"
-                  className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
+                  className={`w-full  px-1 md:px-3 py-0.5 md:py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
                   required
                 />
               </div>
@@ -96,7 +96,7 @@ const PlaceOrder = () => {
                   value={formData.LastName}
                   onChange={handleChange}
                   placeholder="Enter your Last Name"
-                  className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
+                  className={`w-full px-1 md:px-3 py-0.5 md:py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
 
                   required
                 />
@@ -116,7 +116,7 @@ const PlaceOrder = () => {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Enter your email"
-                  className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
+                  className={`w-full px-1 md:px-3 py-0.5 md:py-2  border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
 
                   required
                 />
@@ -133,7 +133,7 @@ const PlaceOrder = () => {
                   value={formData.phoneNumber}
                   onChange={handleChange}
                   placeholder="Enter your phone number"
-                  className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
+                  className={`w-full px-1 md:px-3 py-0.5 md:py-2  border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
 
                   required
                 />
@@ -151,7 +151,7 @@ const PlaceOrder = () => {
                 value={formData.street}
                 onChange={handleChange}
                 placeholder="Enter your address"
-                className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
+                className={`w-full px-1 md:px-3 py-0.5 md:py-2  border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
 
                 rows="3"
                 required
@@ -171,7 +171,7 @@ const PlaceOrder = () => {
                   value={formData.city}
                   onChange={handleChange}
                   placeholder="Enter your city"
-                  className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
+                  className={`w-full px-1 md:px-3 py-0.5 md:py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
 
                   required
                 />
@@ -188,7 +188,7 @@ const PlaceOrder = () => {
                   value={formData.state}
                   onChange={handleChange}
                   placeholder="Enter your state"
-                  className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
+                  className={`w-full px-1 md:px-3 py-0.5 md:py-2  border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
 
                   required
                 />
@@ -208,7 +208,7 @@ const PlaceOrder = () => {
                   value={formData.zipCode}
                   onChange={handleChange}
                   placeholder="Enter your ZIP code"
-                  className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
+                  className={`w-full px-1 md:px-3 py-0.5 md:py-2  border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
 
                   required
                 />
@@ -225,7 +225,7 @@ const PlaceOrder = () => {
                   value={formData.Country}
                   onChange={handleChange}
                   placeholder="Enter your Country name"
-                  className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
+                  className={`w-full px-1 md:px-3 py-0.5 md:py-2  border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
 
                   required
                 />
@@ -234,7 +234,7 @@ const PlaceOrder = () => {
 
             <button
               type="submit"
-              className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full  bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               Submit Address
             </button>

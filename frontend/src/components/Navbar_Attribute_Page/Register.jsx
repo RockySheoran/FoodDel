@@ -50,10 +50,10 @@ const Register = ({ setLoginCheck, loginCheck, setloginRegister, loginRegister }
 
   return (
     <div
-      className={`login_Page flex absolute z-[9999999] items-center justify-center h-screen w-screen bg-opacity-50 ${isDarkTheme ? 'bg-gray-900 text-white' : 'bg-white text-black'}`}
+      className={`login_Page  flex absolute  z-[9999999] items-center justify-center h-screen w-screen bg-opacity-50 ${isDarkTheme ? 'bg-gray-900 text-white' : 'bg-white text-black'}`}
     >
       <div
-        className={`login_container fixed flex flex-col min-h-[500px] max-h-[700px] max-w-[500px] min-w-[350px] rounded-md shadow-lg ${isDarkTheme ? 'bg-gray-800' : 'bg-slate-500'}`}
+        className={`login_container fixed flex flex-col min-h-[500px] max-h-[700px] sm:max-w-[500px] sm:min-w-[350px] max-w-[280px] rounded-lg shadow-lg ${isDarkTheme ? 'bg-gray-800' : 'bg-slate-500'}`}
       >
         <div className={`login_Cross flex justify-between w-full content-center items-center px-4 ${isDarkTheme ? 'bg-gray-700' : 'bg-white'}`}>
           <h3>Register</h3>
@@ -62,9 +62,9 @@ const Register = ({ setLoginCheck, loginCheck, setloginRegister, loginRegister }
        className={`h-6 w-6 cursor-pointer  ${isDarkTheme ? ' text-white  ' : ' text-black'}  `}
          />
         </div>
-        <form onSubmit={onRegister} className="p-4 flex flex-col">
+        <form onSubmit={onRegister} className=" p-2 !sm:p-4 flex flex-col">
           {/* Name */}
-          <label htmlFor="name" className="relative py-1 left-2">
+          <label htmlFor="name" className="relative py-1 sm:left-2">
             Name:
           </label>
           <input
@@ -75,12 +75,12 @@ const Register = ({ setLoginCheck, loginCheck, setloginRegister, loginRegister }
             id="name"
             name="name"
             required
-            className={`ml-3 rounded-md px-0.5 h-7 w-full ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
+            className={`!sm:ml-3 rounded-md px-0.5 h-7 w-full ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
 
           />
 
           {/* Email */}
-          <label htmlFor="email" className="relative py-1 left-2">
+          <label htmlFor="email" className="relative py-1 sm:left-2">
             Email id:
           </label>
           <input
@@ -91,15 +91,15 @@ const Register = ({ setLoginCheck, loginCheck, setloginRegister, loginRegister }
             id="Email"
             name="email"
             required
-            className={`ml-3 rounded-md px-0.5 h-7 w-full ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
+            className={`!sm:ml-3 rounded-md px-0.5 h-7 w-full ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
            
           />
 
           {/* Password */}
-          <label htmlFor="password" className="relative py-1 left-2">
+          <label htmlFor="password" className="relative py-1 sm:left-2">
             Password:
           </label>
-          <div className="pass_In px-0.5 h-7 overflow-y-hidden">
+          <div className="pass_In px-0.5 h-9  overflow-y-hidden">
             <input
               onChange={onchangeHandler}
               value={data.password}
@@ -108,18 +108,18 @@ const Register = ({ setLoginCheck, loginCheck, setloginRegister, loginRegister }
               placeholder="Enter your Password"
               id="Password"
               required
-              className={`ml-3 rounded-md  px-0.5 h-7 w-full ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
+              className={`!sm:ml-3 rounded-md overflow-visible relative bottom-1 sm:bottom-0 px-0.5 h-7 w-full ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
 
             />
-                         <span onClick={() => setpassShow({ ...passShow, password: !passShow.password })}  className='relative cursor-pointer z-100 bottom-[25px] left-[265px] text-2xl w-5  ' id='password'>{passShow.password == false? <IoEye />: <IoEyeOff />}</span>
+                         <span onClick={() => setpassShow({ ...passShow, password: !passShow.password })}  className='relative cursor-pointer z-100 bottom-[29px] sm:bottom-[28px] sm:left-[295px] left-[230px] text-2xl w-5  ' id='password'>{passShow.password == false? <IoEye />: <IoEyeOff />}</span>
 
           </div>
 
           {/* Confirm Password */}
-          <label htmlFor="Confirm_Password" className="relative pb-1 left-2">
+          <label htmlFor="Confirm_Password" className="relative pb-1 sm:left-2">
             Confirm Password:
           </label>
-          <div className="pass_In px-0.5 mb-1 h-7 overflow-y-hidden">
+          <div className="pass_In px-0.5 mb-1 h-9 overflow-y-hidden">
             <input
               onChange={onchangeHandler}
               value={data.Confirm_Password}
@@ -128,10 +128,10 @@ const Register = ({ setLoginCheck, loginCheck, setloginRegister, loginRegister }
               placeholder="Enter your Confirm Password"
               id="Confirm_Password"
               required
-              className={`ml-3 rounded-md px-0.5 h-7 w-full ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
+              className={`!sm:ml-3 rounded-md px-0.5 h-7 relative bottom-1 sm:bottom-0 w-full ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
 
             />
-                          <span onClick={() => setpassShow({...passShow,  Confirm_Password: !passShow.Confirm_Password})} className='relative z-100 bottom-[25px] left-[265px] text-2xl w-5  cursor-pointer' id='Confirm_Password' >{passShow.Confirm_Password == false? <IoEye />: <IoEyeOff />}</span>
+                          <span onClick={() => setpassShow({...passShow,  Confirm_Password: !passShow.Confirm_Password})} className='relative z-100 bottom-[29px] sm:bottom-[28px] sm:left-[295px] left-[230px] text-2xl w-5  cursor-pointer' id='Confirm_Password' >{passShow.Confirm_Password == false? <IoEye />: <IoEyeOff />}</span>
 
           </div>
 
@@ -143,7 +143,7 @@ const Register = ({ setLoginCheck, loginCheck, setloginRegister, loginRegister }
               <span className="text-red-800 cursor-pointer">Privacy Policy</span>
             </label>
           </div>
-          <button type="submit" className={`rounded-md py-1 hover:scale-105 w-full ${isDarkTheme ? 'bg-red-500' : 'bg-red-400'}`}>
+          <button type="submit" className={`rounded-md hover:animate-pulse duration-75 transition-shadow py-1 hover:scale-105 w-full ${isDarkTheme ? 'bg-red-500' : 'bg-red-400'}`}>
             Create Account
           </button>
         </form>

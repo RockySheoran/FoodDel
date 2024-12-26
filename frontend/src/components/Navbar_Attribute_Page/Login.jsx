@@ -50,7 +50,7 @@ const Login = ({ setLoginCheck, loginCheck, setloginRegister, loginRegister }) =
       className={`login_Page flex overflow-y-hidden  absolute  items-center justify-center z-[9999999] h-screen w-screen bg-opacity-50 ${isDarkTheme ? 'bg-gray-900 text-white' : 'bg-white text-black'}`}
     >
       <div
-        className={`login_container fixed flex flex-col min-h-[500px] max-h-[700px] max-w-[500px] min-w-[350px] rounded-md shadow-lg ${isDarkTheme ? 'bg-gray-800' : 'bg-slate-500'}`}
+        className={`login_container fixed flex  flex-col min-h-[500px] max-h-[700px] sm:max-w-[500px] sm:min-w-[350px] max-w-[280px] rounded-lg shadow-lg ${isDarkTheme ? 'bg-gray-800' : 'bg-slate-500'}`}
       >
         <div className={`login_Cross flex justify-between w-full content-center items-center px-4 ${isDarkTheme ? 'bg-gray-700' : 'bg-white'}`}>
           <h3>Login</h3>
@@ -59,9 +59,9 @@ const Login = ({ setLoginCheck, loginCheck, setloginRegister, loginRegister }) =
             className={`h-6 w-6 cursor-pointer  ${isDarkTheme ? ' text-white  ' : ' text-black'}  `}
           />
         </div>
-        <form onSubmit={onLogin} className="p-4 flex flex-col">
+        <form onSubmit={onLogin} className="p-2 sm:p-4 md:sm:p-4 flex flex-col">
           {/* Email */}
-          <label htmlFor="email" className="relative py-1 left-2">
+          <label htmlFor="email" className="relative py-1 sm:left-2">
             Email id:
           </label>
           <input
@@ -72,14 +72,14 @@ const Login = ({ setLoginCheck, loginCheck, setloginRegister, loginRegister }) =
             id="Email"
             name="email"
             required
-            className={`ml-3 rounded-md px-0.5 h-7 w-full ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
+            className={`!sm:ml-3 rounded-md px-0.5 h-7 w-full ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
           />
 
           {/* Password */}
-          <label htmlFor="password" className="relative overflow-y-hidden py-1 left-2">
+          <label htmlFor="password" className="relative overflow-y-hidden py-1 sm:left-2">
             Password:
           </label>
-          <div className="pass_In px-0.5 h-7 overflow-y-hidden">
+          <div className="pass_In px-0.5 h-9 overflow-y-hidden">
             <input
               onChange={onchangeHandler}
               value={data.password}
@@ -88,22 +88,22 @@ const Login = ({ setLoginCheck, loginCheck, setloginRegister, loginRegister }) =
               placeholder="Enter your Password"
               id="Password"
               required
-              className={`ml-3 px-0.5  h-7 w-full rounded ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
+              className={`!sm:ml-3 ml-0 px-0.5  h-7 relative bottom-1  w-full rounded ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
             />
          
-              <span onClick={() => setpassShow({ ...passShow, password: !passShow.password })}  className='relative cursor-pointer z-100 bottom-[25px] left-[265px] text-2xl w-5  ' id='password'>{passShow.password == false? <IoEye />: <IoEyeOff />}</span>
+              <span onClick={() => setpassShow({ ...passShow, password: !passShow.password })}  className='relative cursor-pointer z-100 bottom-[29px] sm:left-[295px] left-[230px] text-2xl w-5  ' id='password'>{passShow.password == false? <IoEye />: <IoEyeOff />}</span>
 
           </div>
 
           {/* Checkbox */}
-          <div className="check_Box pl-3 flex pb-2">
+          <div className="check_Box sm:pl-3 pl-1 flex pb-2">
             <input type="checkbox" className="mr-4 cursor-pointer" id="policy" required />
             <label htmlFor="policy" className="w-64">
               By continuing, I agree to the terms of use &{' '}
               <span className="text-red-800 cursor-pointer">Privacy Policy</span>
             </label>
           </div>
-          <button type="submit" className={`rounded-md py-1 hover:scale-105 w-full ${isDarkTheme ? 'bg-red-500' : 'bg-red-400'}`}>
+          <button type="submit" className={`rounded-md py-1 duration-75 hover:animate-spin hover:scale-105 w-full ${isDarkTheme ? 'bg-red-500' : 'bg-red-400'}`}>
             Log In
           </button>
         </form>

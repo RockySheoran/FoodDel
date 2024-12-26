@@ -24,13 +24,16 @@ const Cart = ({ loginCheck, setLoginCheck }) => {
   return (
     <div className={`Cart container my-4 ${isDarkTheme ? 'text-white' : 'text-black'}`}>
       <div className="cart_Item_Title p-0 md:p-3 lg:p-9">
-        <div className="cart_Header grid grid-cols-6 gap-0.5">
-          <p>Items</p>
-          <p className="col-span-1">Title</p>
-          <p className="flex justify-end">Prices</p>
-          <p className="flex justify-end">Quantity</p>
-          <p className="flex justify-end pr-1">Total</p>
-          <p className="flex justify-end">Remove</p>
+        <div className="cart_Header  grid gap-0.5">
+          <p >Items</p>
+          <p className="col ml-1">Title</p>
+          <p className="flex justify-end overflow-visible mr-0.5">Prices</p>
+          {
+           window.innerWidth <600 ?  <p className="flex justify-end">Quan</p>: <p className="flex justify-end ">Quantity</p>
+          }
+         
+          <p className="flex justify-end pr-.5">Total</p>
+          <p className="flex justify-end overflow-visible">Remove</p>
         </div>
         <hr className={`w-full h-[2px] ${isDarkTheme ? 'bg-gray-500' : 'bg-slate-500'}`} />
         <div className="cart_Item">
@@ -46,7 +49,7 @@ const Cart = ({ loginCheck, setLoginCheck }) => {
                     />
                     <p className="col-span-1 mx-2 text-[15px]">{item.name}</p>
                     <p className="flex justify-end">&#8377;{item.price*20}</p>
-                    <p className="flex justify-end">{cartItem[item._id]}</p>
+                    <p className="flex justify-end mr-2">{cartItem[item._id]}</p>
                     <p className="flex justify-end">&#8377;{cartItem[item._id] * item.price*20}</p>
                     <p
                       onClick={() => removeCart_Item(item._id)}
@@ -104,7 +107,7 @@ const Cart = ({ loginCheck, setLoginCheck }) => {
           <hr className={`w-full h-[2px] ${isDarkTheme ? 'bg-gray-500' : 'bg-slate-500'}`} />
           <div className="b mr-3 flex justify-end">
             <Link
-              to={Object.keys(cartItem).length > 0 ? "/order" : ""}
+              to={(Object.keys(cartItem).length > 0) && token ? "/order" : ""}
               onClick={oncheckItem}
               type="button"
               className="bg-red-600 px-2 py-1 rounded-lg text-white hover:bg-red-400 hover:text-slate-100"

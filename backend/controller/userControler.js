@@ -25,6 +25,11 @@ const loginUser = async (req,res) =>{
     }
     const token = createToken(userExists._id);
     // console.log(token)
+    res.cookie("jwt", token, {
+        withCredentials: true,
+        httpOnly: false,
+        maxAge: maxAge * 100000,
+      });
     res.json({success:true,token})
 }
 catch(e){
@@ -70,6 +75,11 @@ const registerUser = async(req,res) =>{
 
   const user = await newUser.save();
   const token = createToken(user._id);
+  res.cookie("jwt", token, {
+    withCredentials: true,
+    httpOnly: false,
+    maxAge: maxAge * 100000,
+  });
   res.json({success:true,token})
 }
 catch(e){

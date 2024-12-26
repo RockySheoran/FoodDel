@@ -54,7 +54,8 @@ a{
 @media (max-width: 768px) {
   .Toastify__toast-container {
     top: 50px !important; /* Move the toast up by 100px */
-    width: 50% !important; 
+    width: 60% !important; 
+    /* height: 60px ; */
     right: 1px !important; 
     margin-left: auto !important;
      /* Adjust width for smaller screens */
@@ -66,3 +67,15 @@ a{
      /* Ensure the toast fills the screen width on mobile */
   }
 }
+.cart_Header{
+  
+    grid-template-columns: 0.8fr 2fr 1fr 1fr 1fr 1fr;
+    /* align-items: start; */
+      
+
+
+  }
+  .Items{
+    grid-template-columns: 0.8fr 2fr 1fr 1fr 1fr 1fr;
+
+  }

@@ -2,7 +2,7 @@
 
 import React, { useContext, useState } from 'react';
 import { GiShoppingCart } from 'react-icons/gi';
-
+import { MdContactMail, MdOutlineLogin } from "react-icons/md";
 import { BsSun, BsMoon } from 'react-icons/bs';
 import { assets } from '../../assets/frontend_assets/assets';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
@@ -11,17 +11,22 @@ import { useTheme } from '../StoreContext/ThemeProvider';
 import { PiHandHeartFill } from "react-icons/pi";
 import { CgProfile } from "react-icons/cg";
 import { FiAlignJustify, FiX } from "react-icons/fi";
+import { useCookies } from 'react-cookie';
 import { IoHome } from 'react-icons/io5';
+
+
 const Navbar = ({ setLoginCheck }) => {
   const [iconDrop, setIconDrop] = useState(false);
   const navigate = useNavigate();
   const [active1, setActive] = useState('Home');
   const { cartItem, token, setToken } = useContext(StoreContext);
   const { isDarkTheme, toggleTheme } = useTheme();
+  const [cookies, setCookie, removeCookie] = useCookies([]);
 
   const isLogOut = () => {
     localStorage.removeItem('token');
     setToken('');
+    removeCookie("jwt");
     navigate('/');
   };
   const [isOpen, setIsOpen] = useState(false);
@@ -36,8 +41,8 @@ const Navbar = ({ setLoginCheck }) => {
 
   
 
-<nav className={`bg-gray-900 text-white fixed top-0 left-0 w-full z-50 shadow-md ${isDarkTheme ? 'bg-dark text-white' : 'bg-slate-50 text-black shadow-lg' }`}>
-      <div className="max-w-7xl mx-auto px-4  flex justify-between items-center h-12">
+<nav className={`bg-gray-900 text-white overflow-y-hidden fixed top-0 left-0 w-full z-50 shadow-md ${isDarkTheme ? 'bg-dark text-white' : 'bg-slate-50 text-black shadow-lg' }`}>
+      <div className="max-w-7xl mx-auto px-4  overflow-y-hidden flex justify-between items-center h-14">
         {/* Logo */}
         
         <div className="text-xl font-bold ">
@@ -81,16 +86,18 @@ const Navbar = ({ setLoginCheck }) => {
               onClick={() => setActive('Contact')}
               className={active1 === 'Contact' ? `active border-b-2 h-7 cursor-pointer  ${isDarkTheme ? 'border-white' : 'border-black'} ` : 'cursor-pointer'}
             >
-              <a href="" style={{ textDecoration: 'none' }} className={` ${isDarkTheme ? 'bg-dark text-white' : 'bg-white text-black'}`}>
+              <Link to="/contactUs" style={{ textDecoration: 'none' }} className={` ${isDarkTheme ? 'bg-dark text-white' : 'bg-white text-black'}`}>
                 Contact us
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
         
         <div className=" gap-3 hidden md:visible md:flex  md:gap-4  lg:gap-4 ">
-        <button onClick={toggleTheme} className="text-xl focus:outline-none relative ">
-            {isDarkTheme ?' 🌞' : <BsMoon className="text-gray-700" />}
+        <button onClick={toggleTheme}  className={`text-xl focus:outline-none relative ${
+            isDarkTheme ? "animate-spin-slow hover:scale-105" : ""
+               }`}>
+            {isDarkTheme ? ' 🌞' : <BsMoon className="text-gray-700" /> }
           </button>
 
          <Link to="/favorite" ><PiHandHeartFill className='top-1 relative w-6 h-6 cursor-pointer' /></Link> 
@@ -115,8 +122,8 @@ const Navbar = ({ setLoginCheck }) => {
             <button
               onClick={() => setLoginCheck(true)}
               type="button"
-              className=" text-center w-[70px] md:w-20 h-8 rounded-full hover:bg-neutral-200"
-            >
+              className={` text-center w-[70px] md:w-20 h-8  rounded-full  ${isDarkTheme ? 'bg-gray-900 hover:bg-zinc-700 text-white' : 'bg-slate-300 hover:bg-slate-200 text-black hover:text-gray-800'}`}
+            > 
               sign in
             </button>
           ) : (
@@ -156,8 +163,10 @@ const Navbar = ({ setLoginCheck }) => {
       
         {/* Mobile Menu Button */}
         <div   className="md:hidden text-white focus:outline-none flex gap-2" >
-        <button onClick={toggleTheme} className="text-xl focus:outline-none relative ">
-            {isDarkTheme ?' 🌞' : <BsMoon className="text-gray-700" />}
+        <button onClick={toggleTheme}  className={`text-xl focus:outline-none relative ${
+    isDarkTheme ? "animate-spin-slow hover:scale-105" : ""
+  }`}>
+            {isDarkTheme ? ' 🌞' : <BsMoon className="text-gray-700" /> }
           </button>
         <button
           className="md:hidden text-white focus:outline-none"
@@ -183,7 +192,7 @@ const Navbar = ({ setLoginCheck }) => {
           
           <FiX className={`w-6 h-6 text-current `} />
         </button>
-        <div onClick={toggleMenu} className="mt-16 space-y-6 px-6">
+        <div onClick={toggleMenu} className="mt-16 space-y-3 px-6 ">
 
     <NavLink 
       to="/" 
@@ -212,14 +221,19 @@ const Navbar = ({ setLoginCheck }) => {
         isDarkTheme ? 'white' : ' black '}`} className='h-6 w-6 ' />
               <span>Cart</span>
             </Link>
+            <Link to="/contactUs" style={{ textDecoration: 'none' }} className={`flex gap-2 ${isDarkTheme ? 'bg-dark text-white' : 'bg-white text-black'} block flex gap-2 px-4 py-2 rounded no-underline`}>
+            <MdContactMail color={` ${
+        isDarkTheme ? 'white' : ' black '}` } className='h-5 w-5 relative  ' /><span>Contact Us</span>
+              </Link>
                
     {!token ? (
             <button
               onClick={() => setLoginCheck(true)}
               type="button"
-              className= {` block rounded py-2 px-4 w-full hover:bg-neutral-200${isDarkTheme ? ' bg-dark text-white' : ' bg-white text-black'}`}
+              className= {` flex gap-2 block rounded py-2 px-3 w-full hover:bg-neutral-200${isDarkTheme ? ' bg-dark text-white' : ' bg-white text-black'}`}
             >
-              Sign In
+              <MdOutlineLogin  className='h-6 w-9'/>
+             <span> Sign In</span>
             </button>
           ) :
                ( 
