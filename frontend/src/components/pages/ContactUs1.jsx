@@ -1,7 +1,7 @@
 import React from "react";
 import { useTheme } from "../StoreContext/ThemeProvider";
 
-export const ContactUs = () => {
+export const ContactUs1 = () => {
      const { isDarkTheme } = useTheme();
      const handleSumbit =(e) =>{
         e.preventDefault();

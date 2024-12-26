@@ -15,7 +15,8 @@ import MyOrder from './components/pages/MyOrder'
 import { useTheme } from './components/StoreContext/ThemeProvider'
 import Fav_Item from './components/pages/Fav_Item'
 import Verify1 from './components/pages/Verify1'
-import { ContactUs } from './components/pages/ContactUS'
+import { ContactUs1 } from './components/pages/ContactUs1'
+
 
 
 
@@ -73,7 +74,7 @@ function App() {
       <Route path='/verify'  element={<Verify1/>}/>
       <Route path='/myorders'  element={<MyOrder/>}/>
       <Route path='/favorite'  element={<Fav_Item/>}/>
-      <Route path='/contactUs'  element={<ContactUs/>}/>
+      <Route path='/contactUs'  element={<ContactUs1/>}/>
       
       
 
