@@ -47,7 +47,7 @@ const PlaceOrder = () => {
     };
 
     const response = await axios.post(`${url}/api/order/place`, orderData, { headers: { token } });
-
+       console.log(response)
     if (response.data.success) {
       const { session_url } = response.data;
       window.location.replace(session_url);
@@ -80,7 +80,7 @@ const PlaceOrder = () => {
                   value={formData.FirstName}
                   onChange={handleChange}
                   placeholder="Enter your First Name"
-                  className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
                   required
                 />
               </div>
@@ -96,7 +96,8 @@ const PlaceOrder = () => {
                   value={formData.LastName}
                   onChange={handleChange}
                   placeholder="Enter your Last Name"
-                  className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
+
                   required
                 />
               </div>
@@ -115,7 +116,8 @@ const PlaceOrder = () => {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Enter your email"
-                  className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
+
                   required
                 />
               </div>
@@ -131,7 +133,8 @@ const PlaceOrder = () => {
                   value={formData.phoneNumber}
                   onChange={handleChange}
                   placeholder="Enter your phone number"
-                  className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
+
                   required
                 />
               </div>
@@ -148,7 +151,8 @@ const PlaceOrder = () => {
                 value={formData.street}
                 onChange={handleChange}
                 placeholder="Enter your address"
-                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
+
                 rows="3"
                 required
               ></textarea>
@@ -167,7 +171,8 @@ const PlaceOrder = () => {
                   value={formData.city}
                   onChange={handleChange}
                   placeholder="Enter your city"
-                  className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
+
                   required
                 />
               </div>
@@ -183,7 +188,8 @@ const PlaceOrder = () => {
                   value={formData.state}
                   onChange={handleChange}
                   placeholder="Enter your state"
-                  className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
+
                   required
                 />
               </div>
@@ -202,7 +208,8 @@ const PlaceOrder = () => {
                   value={formData.zipCode}
                   onChange={handleChange}
                   placeholder="Enter your ZIP code"
-                  className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
+
                   required
                 />
               </div>
@@ -218,7 +225,8 @@ const PlaceOrder = () => {
                   value={formData.Country}
                   onChange={handleChange}
                   placeholder="Enter your Country name"
-                  className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
+
                   required
                 />
               </div>
