@@ -10,22 +10,42 @@ const ExploreMenu = ({ category, setcategory }) => {
   const scrollRef = useRef(null);
   const { isDarkTheme } = useTheme();
 
+  // useEffect(() => {
+  //   const scrollContainer = scrollRef.current;
+
+  //   const scrollLoop = () => {
+  //     if (scrollContainer) {
+  //       if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
+  //         scrollContainer.scrollLeft = 0; // Reset scroll
+  //       } else {
+  //         scrollContainer.scrollLeft += 1; // Increment scroll
+  //       }
+  //     }
+  //   };
+
+  //   const interval = setInterval(scrollLoop, 18); // Adjust scroll speed with interval
+  //   return () => clearInterval(interval);
+  // }, []);
   useEffect(() => {
     const scrollContainer = scrollRef.current;
 
+    let animationFrameId;
+
     const scrollLoop = () => {
       if (scrollContainer) {
+        scrollContainer.scrollLeft += 1.5; // Increment scroll
         if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
-          scrollContainer.scrollLeft = 0; // Reset scroll
-        } else {
-          scrollContainer.scrollLeft += 1; // Increment scroll
+          scrollContainer.scrollLeft = 0; // Reset scroll when end is reached
         }
       }
+      animationFrameId = requestAnimationFrame(scrollLoop); // Smooth scrolling
     };
 
-    const interval = setInterval(scrollLoop, 18); // Adjust scroll speed with interval
-    return () => clearInterval(interval);
+    animationFrameId = requestAnimationFrame(scrollLoop);
+    
+    return () => cancelAnimationFrame(animationFrameId); // Cleanup animation frame
   }, []);
+
 
   return (
     <>
@@ -38,7 +58,7 @@ const ExploreMenu = ({ category, setcategory }) => {
 
         <div
           ref={scrollRef}
-          className="flex overflow-x-auto gap-6 p-4"
+          className="flex !overflow-x-auto gap-6 p-4"
           style={{ scrollbarWidth: "none", whiteSpace: "nowrap" }}
         >
           {[...menu_list, ...menu_list].map((dish, index) => {
@@ -46,7 +66,7 @@ const ExploreMenu = ({ category, setcategory }) => {
               <div
                 onClick={() => setcategory((pre) => (pre === dish.menu_name ? "All" : dish.menu_name))}
                 key={index}
-                className={`flex flex-col items-center flex-shrink-0 overflow-visible rounded-lg  ${isDarkTheme ? '' : 'bg-white'}`}
+                className={`flex flex-col items-center  flex-shrink-0 overflow-visible rounded-lg  ${isDarkTheme ? '' : 'bg-white'}`}
               >
                 <img
                   src={dish.menu_image} 

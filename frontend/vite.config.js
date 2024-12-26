@@ -1,11 +1,10 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from "vite";
+
 
 export default defineConfig({
-  plugins: [react()],
-  resolve: {
-    alias: {
-      '@components': '/src/components',
-    },
+  build: {
+    target: 'esnext',
+    minify: 'esbuild',
+    chunkSizeWarningLimit: 500, // Adjust if bundles are too large
   },
 });

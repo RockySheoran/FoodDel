@@ -1,3 +1,4 @@
+import React from "react";
 import { createContext, useEffect, useState } from "react";
 import { food_list } from "../../assets/frontend_assets/assets";
 import { use } from "react";
@@ -10,6 +11,7 @@ export const  StoreContext = createContext(null);
  const StoreContextProvider = (props) => {
     const[cartItem ,setCartItem ] = useState({});
     const [fav,setFav] = useState({});
+     const [loading ,setLoading] = useState(false);
     
     const url = "https://fooddel-backend3.onrender.com";
 
@@ -20,37 +22,7 @@ export const  StoreContext = createContext(null);
 
    
 
-    // const addCart_Item = async(itemId) => {
-    //     if(!cartItem[itemId]){
-    //         setCartItem( (pre)=> ({...pre , [itemId]:1}) );
-    //     }
-    //     else{
-    //         setCartItem( (pre)=> ({...pre , [itemId]:pre[itemId]+1}));
-    //     }
     
-       
-    //     if(token){
-    //         // console.log(token)
-    //         // console.log(itemId)
-    //         await axios.post(url+"/api/cart/add",{itemId},{headers:{token}})
-    //     }
-    // }
-    // remove the item
-    // const removeCart_Item = async(itemId) => {
-       
-    //     setCartItem((pre) => {
-    //         // Only decrement if the quantity is greater than 0
-    //         if (pre[itemId] > 0) {
-    //           return { ...pre, [itemId]: pre[itemId] - 1 };
-    //         } else {
-    //           // If quantity is already 0, return the cart as is
-    //           return pre;
-    //         }
-    //     });
-    //     if(token){
-    //         await axios.post(url+"/api/cart/remove",{itemId},{headers:{token}})
-    //     }
-    // }
 
     const addCart_Item = async (itemId) => {
         setCartItem((prevCart) => {
@@ -134,6 +106,7 @@ export const  StoreContext = createContext(null);
        const getFoodData  =  async() =>{
         const response  = await axios.get(url+"/api/food/list");
            setFoodList(response.data.data);
+           setLoading(true);
           
        }
       //  console.log(food_list)
@@ -153,7 +126,7 @@ export const  StoreContext = createContext(null);
 
 
         })
-        toast.success("fav item add successful")
+        toast.success("fav item add ")
         if (token) {
           await axios.post(url + "/api/favorite/addFav", { itemId }, { headers: { token } });
         }
@@ -225,6 +198,7 @@ export const  StoreContext = createContext(null);
         remove_Fav_item,
         fav,
         setFav,
+        loading,setLoading
 
     }
 

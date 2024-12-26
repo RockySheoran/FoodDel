@@ -47,7 +47,7 @@ const Login = ({ setLoginCheck, loginCheck, setloginRegister, loginRegister }) =
 
   return (
     <div
-      className={`login_Page flex  absolute  items-center justify-center z-[9999999] h-screen w-screen bg-opacity-50 ${isDarkTheme ? 'bg-gray-900 text-white' : 'bg-white text-black'}`}
+      className={`login_Page flex overflow-y-hidden  absolute  items-center justify-center z-[9999999] h-screen w-screen bg-opacity-50 ${isDarkTheme ? 'bg-gray-900 text-white' : 'bg-white text-black'}`}
     >
       <div
         className={`login_container fixed flex flex-col min-h-[500px] max-h-[700px] max-w-[500px] min-w-[350px] rounded-md shadow-lg ${isDarkTheme ? 'bg-gray-800' : 'bg-slate-500'}`}

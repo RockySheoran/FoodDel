@@ -21,7 +21,7 @@ const Food_Item = ({ _id, name, image, category, description, price }) => {
         <img
           src={`${url}/images/${image}`}
           alt="food-item"
-          className="food_Image bg-cover hover:scale-[1.02]"
+          className="food_Image bg-cover hover:scale-[1.02] overflow-y-hidden"
         />
         <div className="fav-button absolute z-[9999]  right-3 top-3">
           {

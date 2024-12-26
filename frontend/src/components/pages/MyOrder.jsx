@@ -53,7 +53,7 @@ const MyOrder = () => {
               </p>
               <button
                 onClick={fetchOrders}
-                className={`relative bottom-1 border-2 rounded-md h-8 ${isDarkTheme ? 'bg-gray-700 text-white' : 'bg-red-200 text-black'}`}
+                className={`relative bottom-1 text-[10px] md:text-xl border-2 rounded-md h-8 ${isDarkTheme ? 'bg-gray-700 text-white' : 'bg-red-200 text-black'}`}
               >
                 Track order
               </button>
