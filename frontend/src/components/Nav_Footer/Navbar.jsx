@@ -11,7 +11,7 @@ import { useTheme } from '../StoreContext/ThemeProvider';
 import { PiHandHeartFill } from "react-icons/pi";
 import { CgProfile } from "react-icons/cg";
 import { FiAlignJustify, FiX } from "react-icons/fi";
-import { useCookies } from 'react-cookie';
+
 import { IoHome } from 'react-icons/io5';
 
 
@@ -21,12 +21,12 @@ const Navbar = ({ setLoginCheck }) => {
   const [active1, setActive] = useState('Home');
   const { cartItem, token, setToken } = useContext(StoreContext);
   const { isDarkTheme, toggleTheme } = useTheme();
-  const [cookies, setCookie, removeCookie] = useCookies([]);
+ 
 
   const isLogOut = () => {
     localStorage.removeItem('token');
     setToken('');
-    removeCookie("jwt");
+    
     navigate('/');
   };
   const [isOpen, setIsOpen] = useState(false);

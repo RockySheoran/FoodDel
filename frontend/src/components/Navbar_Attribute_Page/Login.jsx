@@ -31,9 +31,11 @@ const Login = ({ setLoginCheck, loginCheck, setloginRegister, loginRegister }) =
 
   const onLogin = async (e) => {
     e.preventDefault();
+    console.log(data)
     const newUrl = `${url}/api/user/login`;
 
     const response = await axios.post(newUrl, data);
+    console.log(response)
 
     if (response.data.success) {
       setToken(response.data.token);
@@ -103,7 +105,7 @@ const Login = ({ setLoginCheck, loginCheck, setloginRegister, loginRegister }) =
               <span className="text-red-800 cursor-pointer">Privacy Policy</span>
             </label>
           </div>
-          <button type="submit" className={`rounded-md py-1 duration-75 hover:animate-spin hover:scale-105 w-full ${isDarkTheme ? 'bg-red-500' : 'bg-red-400'}`}>
+          <button type="submit" className={`rounded-md py-1 duration-75  hover:bg-red-300 w-full ${isDarkTheme ? 'bg-red-500' : 'bg-red-400'}`}>
             Log In
           </button>
         </form>

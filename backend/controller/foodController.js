@@ -11,7 +11,7 @@ const addFood = async (req, res) => {
     }
 
     const food_image = `${req.file.filename}` ;
-
+      
    
     if (!food_image) {
         return res.status(400).json({ success: false, message: "Image upload failed" });
@@ -45,6 +45,7 @@ const findFoodList  = async(req,res) =>{
     try{
         const foodList  =await foodModel.find({});
         res.json({status:true,data:foodList})
+        console.log("fwf")
     }
     catch(e){
         res.json({status:false,message:"error of find list"})

@@ -7,7 +7,7 @@ import { userRouter } from "./route/userRoute.js";
 import cartRouter from "./route/cartRouter.js";
 import orderRouter from "./route/orderRoute.js";
 import FavRouter from "./route/favRouter.js";
-import cookieParser from "cookie-parser";
+
 import compression  from 'compression' 
 
 
@@ -17,7 +17,7 @@ const port = process.env.PORT || 4000;
 
 
 // middleware
-app.use(cookieParser());
+
 app.use(express.json());
 app.use(compression());
 app.use(cors());

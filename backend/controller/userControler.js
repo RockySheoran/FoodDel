@@ -13,8 +13,10 @@ const createToken = (id) =>{
 // login user
 const loginUser = async (req,res) =>{
     try{
-
+      console.log("qscs")
     const {email,password} = req.body;
+    console.log(email,password);
+    
     const userExists = await userModel.findOne({email:email});
     if(!userExists){
         return res.json({success:false,message:"User doesn't exists"})
@@ -24,17 +26,14 @@ const loginUser = async (req,res) =>{
         return res.json({success:false,message:"password inCorrect"});
     }
     const token = createToken(userExists._id);
-    // console.log(token)
-    res.cookie("jwt", token, {
-        withCredentials: true,
-        httpOnly: false,
-        maxAge: maxAge * 100000,
-      });
+    console.log(token)
+    
     res.json({success:true,token})
 }
 catch(e){
+    console.log("dvss")
     console.log(e)
-    res.json({success:false,message:"error"})
+    res.json({success:false,message:"ccs"})
 
 }
 
@@ -75,11 +74,7 @@ const registerUser = async(req,res) =>{
 
   const user = await newUser.save();
   const token = createToken(user._id);
-  res.cookie("jwt", token, {
-    withCredentials: true,
-    httpOnly: false,
-    maxAge: maxAge * 100000,
-  });
+ 
   res.json({success:true,token})
 }
 catch(e){
