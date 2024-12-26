@@ -129,7 +129,7 @@ const Navbar = ({ setLoginCheck }) => {
                 <div
                   onMouseOver={() => setIconDrop(true)}
                   onMouseOut={() => setIconDrop(false)}
-                  className=" top-11 border-1 ml-5   fixed   bg-[#fff2ef] flex flex-col rounded-lg shadow-lg"
+                  className=" top-11 border-1 ml-10   fixed   bg-[#fff2ef] flex flex-col rounded-lg shadow-lg"
                 >
                   <Link
                     to="/myorders"
