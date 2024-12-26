@@ -6,16 +6,22 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { assets } from '../../../../frontend/src/assets/frontend_assets/assets';
 import { useTheme } from '../StoreContext/ThemeProvider';
+import ReactLoading from 'react-loading';
 
 
 const Order = ({ url }) => {
   const { isDarkTheme } = useTheme();
   const [orders, setOrders] = useState([]);
+    const [loding,setLoding] = useState(false);
+  
 
   const fetchAllOrder = async () => {
     const response = await axios.get(url + "/api/order/list");
     if (response.data.success) {
       setOrders(response.data.data);
+      toast.success("Data fetched")
+      setLoding(true);
+
     } else {
       toast.error("Error");
     }
@@ -50,7 +56,13 @@ const Order = ({ url }) => {
   return (
     <div className={`order add md:mx-11 mx-2 mt-11 ${isDarkTheme ? 'bg-gray-900 text-white' : 'bg-white text-black'}`}>
       <h3>Order Page</h3>
-      <div className="order_list flex flex-col gap-3">
+     
+      { !loding ?
+          <div className="loading-div  container flex justify-center items-center">
+                <ReactLoading type={'spin'} color={'red'} height={'100px'} width={'100px'} />
+                </div>
+          
+          : <div className="order_list flex flex-col gap-3">
         {orders.map((order, index) => {
           return (
             <div
@@ -96,6 +108,7 @@ const Order = ({ url }) => {
           );
         })}
       </div>
+}
     </div>
   );
 };
