@@ -79,7 +79,7 @@ const Login = ({ setLoginCheck, loginCheck, setloginRegister, loginRegister }) =
           <label htmlFor="password" className="relative overflow-y-hidden py-1 left-2">
             Password:
           </label>
-          <div className="pass_In px-0.5 h-9 overflow-y-hidden">
+          <div className="pass_In px-0.5 h-7 overflow-y-hidden">
             <input
               onChange={onchangeHandler}
               value={data.password}
