@@ -8,13 +8,14 @@ import { useTheme } from '../StoreContext/ThemeProvider.jsx';
 
 
 const Verify = () => {
-  const query = new URLSearchParams(useLocation().search);
-    const success = query.get("success");
-    const orderId = query.get("orderId");
+  // const query = new URLSearchParams(useLocation().search);
+  //   const success = query.get("success");
+  //   const orderId = query.get("orderId");
 
-  // const [searchParams] = useSearchParams();
-  // const success = searchParams.get('success');
-  // const orderId = searchParams.get('orderId');
+  const [searchParams] = useSearchParams();
+  const success = searchParams.get('success');
+  const orderId = searchParams.get('orderId');
+  console.log(success,orderId)
   const { url } = useContext(StoreContext);
   const navigate = useNavigate();
   const { isDarkTheme } = useTheme();
