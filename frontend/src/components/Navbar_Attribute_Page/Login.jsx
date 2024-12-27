@@ -1,7 +1,7 @@
 
 
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { assets } from '../../assets/frontend_assets/assets';
 import { IoEye, IoEyeOff } from 'react-icons/io5';
 import { useContext } from 'react';
@@ -10,11 +10,20 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useTheme } from '../StoreContext/ThemeProvider';
 import { RxCross1 } from "react-icons/rx";
+import { useNavigate } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 
 const Login = ({ setLoginCheck, loginCheck, setloginRegister, loginRegister }) => {
   const { url, setToken } = useContext(StoreContext);
   const { isDarkTheme } = useTheme();
 
+  const [cookies] = useCookies([]);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (cookies.jwt) {
+      navigate("/");
+    }
+  }, [cookies, navigate]);
   const [passShow, setpassShow] = useState({
     password: false,
   });
@@ -34,7 +43,7 @@ const Login = ({ setLoginCheck, loginCheck, setloginRegister, loginRegister }) =
     console.log(data)
     const newUrl = `${url}/api/user/login`;
 
-    const response = await axios.post(newUrl, data);
+    const response = await axios.post(newUrl, data, );
     console.log(response)
 
     if (response.data.success) {

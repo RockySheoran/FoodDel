@@ -9,16 +9,17 @@ import orderRouter from "./route/orderRoute.js";
 import FavRouter from "./route/favRouter.js";
 
 import compression  from 'compression' 
-
+import cookieParser from "cookie-parser";
 
 // app config
 const app = express();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 5000;
 
 
 // middleware
 
 app.use(express.json());
+app.use(cookieParser());
 app.use(compression());
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));

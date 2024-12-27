@@ -1,6 +1,6 @@
 
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { assets } from '../../assets/frontend_assets/assets';
 import { IoEye, IoEyeOff } from 'react-icons/io5';
 import { useContext } from 'react';
@@ -9,12 +9,20 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useTheme } from '../StoreContext/ThemeProvider';
 import { RxCross1 } from 'react-icons/rx';
+import { useCookies } from "react-cookie";
+import { useNavigate } from 'react-router-dom';
 
 
 const Register = ({ setLoginCheck, loginCheck, setloginRegister, loginRegister }) => {
   const { url, setToken } = useContext(StoreContext);
   const { isDarkTheme } = useTheme();
-
+  const [cookies] = useCookies(["cookie-name"]);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (cookies.jwt) {
+      navigate("/");
+    }
+  }, [cookies, navigate]);
   const [passShow, setpassShow] = useState({
     password: false,
     Confirm_Password: false,
@@ -36,7 +44,7 @@ const Register = ({ setLoginCheck, loginCheck, setloginRegister, loginRegister }
     e.preventDefault();
     const newUrl = `${url}/api/user/register`;
 
-    const response = await axios.post(newUrl, data);
+    const response = await axios.post(newUrl, data,);
 
     if (response.data.success) {
       setToken(response.data.token);
