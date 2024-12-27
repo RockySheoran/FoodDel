@@ -14,11 +14,15 @@ export const  StoreContext = createContext(null);
     const [fav,setFav] = useState({});
      const [loading ,setLoading] = useState(false);
     
-     const url =
-     process.env.NODE_ENV === "production"
-       ? "https://fooddel-backend3.onrender.com"
-       : "http://localhost:5000";
-       
+    // const url = "https://fooddel-backend3.onrender.com";
+    // const url = "http://localhost:5000";
+    const url =
+  process.env.NODE_ENV === "production"
+    ? "https://fooddel-backend3.onrender.com"
+    : "http://localhost:5000";
+
+
+
     const [token ,setToken ] = useState("");
     const [food_list , setFoodList] = useState([]);
     const [cartNumber,setCartNumber] = useState(0);
