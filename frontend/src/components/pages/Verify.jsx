@@ -1,16 +1,20 @@
 
 import React, { useEffect, useState } from 'react';
 import { useContext } from 'react';
-import { Navigate, useNavigate, useSearchParams } from 'react-router-dom';
+import { Navigate, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { StoreContext } from '../StoreContext/StoreContext.jsx';
 import axios from 'axios';
 import { useTheme } from '../StoreContext/ThemeProvider.jsx';
 
 
-const Verify1 = () => {
-  const [searchParams] = useSearchParams();
-  const success = searchParams.get('success');
-  const orderId = searchParams.get('orderId');
+const Verify = () => {
+  const query = new URLSearchParams(useLocation().search);
+    const success = query.get("success");
+    const orderId = query.get("orderId");
+
+  // const [searchParams] = useSearchParams();
+  // const success = searchParams.get('success');
+  // const orderId = searchParams.get('orderId');
   const { url } = useContext(StoreContext);
   const navigate = useNavigate();
   const { isDarkTheme } = useTheme();
@@ -40,4 +44,4 @@ const Verify1 = () => {
   );
 };
 
-export default Verify1;
+export default Verify;
