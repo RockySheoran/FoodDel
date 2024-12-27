@@ -18,8 +18,9 @@ import Fav_Item from './components/pages/Fav_Item'
 import { ContactUs1 } from './components/pages/ContactUs1'
 import Verify from './components/pages/Verify'
 
-import FeedbackForm from './components/Function/FeedbackForm'
-import MoveTop from './components/Function/MoveTop'
+
+import MoveTop from './components/Functions/MoveTop'
+import FeedbackForm from './components/Functions/FeedbackForm'
 
 
 

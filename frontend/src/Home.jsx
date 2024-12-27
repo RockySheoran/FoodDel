@@ -3,7 +3,7 @@ import Header from './components/pages/Header'
 import ExploreMenu from './components/pages/ExploreMenu'
 import FoodDisplay from './components/pages/FoodDisplay';
 import AppDownload from './components/pages/AppDownload';
-import FeedbackDisplay from './components/Function/FeedbackDisplay';
+import FeedbackDisplay from './components/Functions/FeedbackDisplay';
 
 // import FeedbackForm from './components/Function/FeedbackForm';
 
