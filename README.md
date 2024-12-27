@@ -1,4 +1,4 @@
-# Food Ordering Web App (MERN Stack)
+# Food Ordering(FoodDel) Web App (MERN Stack)
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -12,7 +12,7 @@
 - [Contact](#contact)
 
 ## Introduction
-This is a full-stack food ordering web application built using the MERN stack (MongoDB, Express, React, Node.js). The application consists of a customer-facing app for ordering food and an admin app for managing orders, menu items, and more.
+This is a full-stack food ordering(FoodDel) web application built using the MERN stack (MongoDB, Express, React, Node.js). The application consists of a customer-facing app for ordering food and an admin app for managing orders, menu items, and more.
 
 ## Features
 - User authentication and authorization
