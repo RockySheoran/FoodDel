@@ -18,15 +18,12 @@ export const  StoreContext = createContext(null);
     
     // const url = "https://fooddel-backend3.onrender.com";
     // const url = "http://localhost:5000";
-  
     const url =
-    import.meta.env.MODE === "production"
-      ? import.meta.env.VITE_PROD_URL
-      : import.meta.env.VITE_DEV_URL;
+    window.location.hostname === "localhost"
+      ? import.meta.env.VITE_DEV_URL
+      : import.meta.env.VITE_PROD_URL;
   
-  console.log(`API URL: ${url}`);
-  console.log("Mode:", import.meta.env.MODE);
-  console.log("API URL:", import.meta.env.VITE_PROD_URL);
+  console.log("API URL:", url);
     
 
 

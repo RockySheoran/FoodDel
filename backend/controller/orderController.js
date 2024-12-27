@@ -11,7 +11,11 @@ const placeOrder = async (req, res) => {
 
   // const frontendUrl = "http://localhost:5173" ;
 
-    const frontendUrl = "https://fooddel-frontend4.onrender.com";
+    // const frontendUrl = "https://fooddel-frontend4.onrender.com";
+    const frontendUrl = window.location.hostname === "localhost" ?" http://localhost:5173"
+    : 'https://fooddel-frontend4.onrender.com';
+
+console.log("API URL:", url);
 
     // console.log(req.body.userId);
   
