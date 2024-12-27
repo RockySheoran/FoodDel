@@ -20,8 +20,8 @@ export const  StoreContext = createContext(null);
     // const url = "http://localhost:5000";
     const url =
     window.location.hostname === "localhost"
-      ? import.meta.env.VITE_DEV_URL
-      : import.meta.env.VITE_PROD_URL;
+      ? 'http://localhost:5000'
+      :' https://fooddel-backend3.onrender.com';
   
   console.log("API URL:", url);
     
