@@ -112,10 +112,10 @@ const Navbar = ({ setLoginCheck }) => {
             </Link>
             <span
               onClick={() => navigate('/cart')}
-              className={`h-5 w-5 top-[1.5px] left-2 absolute overflow-visible  translate-y-[-7px] cursor-pointer -z-[9999999]  ${
+              className={`h-5 w-5 top-[1.5px] left-2.5 absolute  overflow-visible  translate-y-[-7px] cursor-pointer z-[9999999]  ${
         isDarkTheme ? ' text-white' : '  text-black'
       } `}          >
-              {Object.keys(cartItem).length === 0 ? '' : Object.keys(cartItem).length}
+              {Object.keys(cartItem).length === 0 ? <span>!</span> : Object.keys(cartItem).length}
             </span>
           </div>
 
@@ -222,7 +222,7 @@ const Navbar = ({ setLoginCheck }) => {
       }`}>
               <GiShoppingCart color={` ${
         isDarkTheme ? 'white' : ' black '}`} className='h-6 w-6 ' />
-              <span>Cart</span>
+              <span className='flex gap-1'>Cart   {Object.keys(cartItem).length === 0 ? <span> ( ! )</span> :`( ${Object.keys(cartItem).length} )` }</span>
             </Link>
             <Link to="/contactUs" style={{ textDecoration: 'none' }} className={`flex gap-2 ${isDarkTheme ? 'bg-dark text-white' : 'bg-white text-black'} block flex gap-2 px-4 py-2 rounded no-underline`}>
             <MdContactMail color={` ${
