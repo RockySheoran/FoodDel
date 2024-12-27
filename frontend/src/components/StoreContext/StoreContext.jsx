@@ -7,15 +7,26 @@ import { toast } from "react-toastify";
 import { MdFavorite, MdShoppingCartCheckout } from "react-icons/md";
 import { IoMdAdd } from "react-icons/io";
 import { CiCircleRemove } from "react-icons/ci";
+import dotenv from 'dotenv';
+dotenv.config();
 export const  StoreContext = createContext(null);
+
 
  const StoreContextProvider = (props) => {
     const[cartItem ,setCartItem ] = useState({});
     const [fav,setFav] = useState({});
      const [loading ,setLoading] = useState(false);
     
-    const url = "https://fooddel-backend3.onrender.com";
+    // const url = "https://fooddel-backend3.onrender.com";
     // const url = "http://localhost:5000";
+    require('dotenv').config();
+
+const url =process.env.NODE_ENV === "production"
+          ? process.env.PROD_URL
+      : process.env.DEV_URL;
+
+console.log(`Backend URL: ${url}`);
+
     
 
 
