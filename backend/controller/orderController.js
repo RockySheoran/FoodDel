@@ -8,11 +8,11 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 // placing user order for frontend
 const placeOrder = async (req, res) => {
-<<<<<<< HEAD
+
   const frontendUrl = "http://localhost:5173" || process.env.FRONTEND_URL ;
-=======
-    const frontendUrl = "https://fooddel-frontend4.onrender.com";
->>>>>>> 7390badf1df88801c907698dbac73a7da5f0833b
+
+    // const frontendUrl = "https://fooddel-frontend4.onrender.com";
+
     // console.log(req.body.userId);
   
     try {
