@@ -1,14 +1,13 @@
 import React from "react";
 import { createContext, useEffect, useState } from "react";
 import { food_list } from "../../assets/frontend_assets/assets";
-import { use } from "react";
+
 import axios from "axios";
 import { toast } from "react-toastify";
 import { MdFavorite, MdShoppingCartCheckout } from "react-icons/md";
 import { IoMdAdd } from "react-icons/io";
 import { CiCircleRemove } from "react-icons/ci";
-import dotenv from 'dotenv';
-dotenv.config();
+
 export const  StoreContext = createContext(null);
 
 
@@ -19,14 +18,15 @@ export const  StoreContext = createContext(null);
     
     // const url = "https://fooddel-backend3.onrender.com";
     // const url = "http://localhost:5000";
-    require('dotenv').config();
-
-const url =process.env.NODE_ENV === "production"
-          ? process.env.PROD_URL
-      : process.env.DEV_URL;
-
-console.log(`Backend URL: ${url}`);
-
+  
+    const url =
+    import.meta.env.MODE === "production"
+      ? import.meta.env.VITE_PROD_URL
+      : import.meta.env.VITE_DEV_URL;
+  
+  console.log(`API URL: ${url}`);
+  console.log("Mode:", import.meta.env.MODE);
+  console.log("API URL:", import.meta.env.VITE_PROD_URL);
     
 
 
