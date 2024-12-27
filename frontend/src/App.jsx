@@ -17,6 +17,9 @@ import Fav_Item from './components/pages/Fav_Item'
 
 import { ContactUs1 } from './components/pages/ContactUs1'
 import Verify from './components/pages/Verify'
+import MoveTop from './components/Function/MoveTop'
+import FeedbackForm from './components/Function/FeedbackForm'
+
 
 
 
@@ -76,11 +79,14 @@ function App() {
       <Route path='/myorders'  element={<MyOrder/>}/>
       <Route path='/favorite'  element={<Fav_Item/>}/>
       <Route path='/contactUs'  element={<ContactUs1/>}/>
+      <Route path='/feedback'  element={<FeedbackForm/>}/>
       
       
 
     </Routes>
     <Footer/>
+    <MoveTop/>
+
     
     </div>
   )

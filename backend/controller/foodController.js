@@ -45,7 +45,7 @@ const findFoodList  = async(req,res) =>{
     try{
         const foodList  =await foodModel.find({});
         res.json({status:true,data:foodList})
-        console.log("fwf")
+        // console.log("fwf")
     }
     catch(e){
         res.json({status:false,message:"error of find list"})

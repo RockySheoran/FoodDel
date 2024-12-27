@@ -11,7 +11,7 @@ import { useTheme } from '../StoreContext/ThemeProvider';
 import { PiHandHeartFill } from "react-icons/pi";
 import { CgProfile } from "react-icons/cg";
 import { FiAlignJustify, FiX } from "react-icons/fi";
-
+import { VscFeedback } from "react-icons/vsc";
 import { IoHome } from 'react-icons/io5';
 import { useCookies } from 'react-cookie';
 
@@ -57,8 +57,8 @@ const Navbar = ({ setLoginCheck }) => {
         </div>
 
         {/* Desktop Menu */}
-        <div className="home_menu hidden md:visible md:flex pt-1  space-x-6 relative top-1">
-          <ul className="flex gap-3 lg:gap-4 ">
+        <div className="home_menu hidden md:visible md:flex pt-1   space-x-6 relative top-1">
+          <ul className="flex gap-2 lg:gap-0 lg:space-x-3  ">
             <li
               onClick={() => setActive('Home')}
               className={active1 === 'Home' ? `active border-b-2 h-7 cursor-pointer ${isDarkTheme ? 'border-white' : 'border-black'} ` : 'cursor-pointer'}
@@ -95,13 +95,14 @@ const Navbar = ({ setLoginCheck }) => {
           </ul>
         </div>
         
-        <div className=" gap-3 hidden md:visible md:flex  md:gap-4  lg:gap-4 ">
+        <div className=" gap-2 lg:gap-0 hidden md:visible md:flex  md:gap-4  lg:space-x-3 ">
         <button onClick={toggleTheme}  className={`text-xl focus:outline-none relative ${
             isDarkTheme ? "animate-spin-slow hover:scale-105" : ""
                }`}>
             {isDarkTheme ? ' 🌞' : <BsMoon className="text-gray-700" /> }
           </button>
 
+         <Link to="/feedback" ><VscFeedback  className='top-1 relative w-6 h-6 cursor-pointer' /></Link> 
          <Link to="/favorite" ><PiHandHeartFill className='top-1 relative w-6 h-6 cursor-pointer' /></Link> 
 
           
@@ -115,7 +116,7 @@ const Navbar = ({ setLoginCheck }) => {
               className={`h-5 w-5 top-[1.5px] left-2.5 absolute  overflow-visible  translate-y-[-7px] cursor-pointer z-[9999999]  ${
         isDarkTheme ? ' text-white' : '  text-black'
       } `}          >
-              {Object.keys(cartItem).length === 0 ? <span>!</span> : Object.keys(cartItem).length}
+              {Object.keys(cartItem).length === 0 ? <span className='text-rose-700'>!</span> : Object.keys(cartItem).length}
             </span>
           </div>
 
@@ -139,7 +140,7 @@ const Navbar = ({ setLoginCheck }) => {
                 <div
                   onMouseOver={() => setIconDrop(true)}
                   onMouseOut={() => setIconDrop(false)}
-                  className=" top-11 border-1 ml-10   fixed   bg-[#fff2ef] flex flex-col rounded-lg shadow-lg"
+                  className=" top-11 border-1 right-8  fixed    bg-[#fff2ef] flex flex-col rounded-lg shadow-lg"
                 >
                   <Link
                     to="/myorders"
@@ -172,7 +173,7 @@ const Navbar = ({ setLoginCheck }) => {
             {isDarkTheme ? ' 🌞' : <BsMoon className="text-gray-700" /> }
           </button>
         <button
-          className="md:hidden text-white focus:outline-none"
+          className="md:hidden ml-1 text-white focus:outline-none"
           onClick={toggleMenu}
         >
      
@@ -208,6 +209,17 @@ const Navbar = ({ setLoginCheck }) => {
         isDarkTheme ? 'white' : ' black '}`} className='h-6 w-6 '/>
     <span> Home</span> 
     </NavLink>
+    <NavLink 
+      to="/feedback" 
+      style={{ textDecoration: 'none' }} 
+      className={`block flex  gap-2 px-4 py-2 rounded ${
+        isDarkTheme ? 'bg-dark text-white' : 'bg-white text-black'
+      }`}
+    >
+      <VscFeedback color={` ${
+        isDarkTheme ? 'white' : ' black '}`} className='h-6 w-6 '/>
+    <span> Feedback</span> 
+    </NavLink>
 
     <Link 
       to="/favorite" 
@@ -222,7 +234,7 @@ const Navbar = ({ setLoginCheck }) => {
       }`}>
               <GiShoppingCart color={` ${
         isDarkTheme ? 'white' : ' black '}`} className='h-6 w-6 ' />
-              <span className='flex gap-1'>Cart   {Object.keys(cartItem).length === 0 ? <span> ( ! )</span> :`( ${Object.keys(cartItem).length} )` }</span>
+              <span className='flex gap-1'>Cart   {Object.keys(cartItem).length === 0 ? <span className='text-rose-700'> ( ! )</span> :`( ${Object.keys(cartItem).length} )` }</span>
             </Link>
             <Link to="/contactUs" style={{ textDecoration: 'none' }} className={`flex gap-2 ${isDarkTheme ? 'bg-dark text-white' : 'bg-white text-black'} block flex gap-2 px-4 py-2 rounded no-underline`}>
             <MdContactMail color={` ${

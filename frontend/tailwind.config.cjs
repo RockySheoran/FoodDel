@@ -7,6 +7,7 @@ export default {
       animation: {
         "spin-slow": "spin 3s linear infinite", // Slow spin (3 seconds)
       },
+     
     },
   },
   plugins: [require("tailwind-scrollbar-hide")],

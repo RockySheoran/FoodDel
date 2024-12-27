@@ -58,7 +58,7 @@ const ExploreMenu = ({ category, setcategory }) => {
 
         <div
           ref={scrollRef}
-          className="flex !overflow-x-auto gap-6 p-4"
+          className="flex !overflow-x-auto  gap-6 p-4"
           style={{ scrollbarWidth: "none", whiteSpace: "nowrap" }}
         >
           {[...menu_list, ...menu_list].map((dish, index) => {

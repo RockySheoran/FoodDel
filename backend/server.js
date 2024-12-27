@@ -10,6 +10,7 @@ import FavRouter from "./route/favRouter.js";
 
 import compression  from 'compression' 
 import cookieParser from "cookie-parser";
+import feedbackRoutes from "./route/feedbackRoutes.js";
 
 // app config
 const app = express();
@@ -30,6 +31,7 @@ app.use('/images', express.static('uploads'));
 connectDB();
 
 // api endpoint
+app.use("/api/feedback", feedbackRoutes);
 app.use("/api/food",foodRouter);
 app.use("/api/user",userRouter);
 app.use("/api/cart",cartRouter);

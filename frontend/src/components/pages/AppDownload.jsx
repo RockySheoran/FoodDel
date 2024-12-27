@@ -13,7 +13,7 @@ const AppDownload = () => {
       className={`App_download text-center mb-5 ${isDarkTheme ? ' text-white' : ' text-black'}`}
       id="app_download"
     >
-      <p className="text-2xl md:text-5xl mb-4">
+      <p className="text-2xl overflow-y-hidden md:text-5xl mb-4">
         For Better Experience Download <br /> xyz App
       </p>
       <div className="logo_app_Download flex justify-center gap-6">
