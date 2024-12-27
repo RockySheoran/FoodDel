@@ -106,14 +106,15 @@ const Navbar = ({ setLoginCheck }) => {
 
           
          
-          <div className="relative">
+          <div className="relative overflow-visible">
             <Link to="/cart" className="cursor-pointer ">
-              <GiShoppingCart className="text-[24px] translate-y-2 -z-[99999] cursor-pointer relative bottom-[2px]  " />
+              <GiShoppingCart className="text-[24px] translate-y-2 overflow-visible z-[9999999999999999] cursor-pointer relative bottom-[2px]  " />
             </Link>
             <span
               onClick={() => navigate('/cart')}
-              className="h-5 w-5 top-[2px] left-2 absolute overflow-visible  translate-y-[-7px] cursor-pointer -z-[9999999]"
-            >
+              className={`h-5 w-5 top-[1.5px] left-2 absolute overflow-visible  translate-y-[-7px] cursor-pointer -z-[9999999]  ${
+        isDarkTheme ? ' text-white' : '  text-black'
+      } `}          >
               {Object.keys(cartItem).length === 0 ? '' : Object.keys(cartItem).length}
             </span>
           </div>
@@ -132,7 +133,7 @@ const Navbar = ({ setLoginCheck }) => {
             <>
           
               <CgProfile  onMouseOver={() => setIconDrop(!iconDrop)}
-                onClick={() => setIconDrop(!iconDrop)} color={`${isDarkTheme ? 'white' : 'black'}`} className='h-6 w-6  top-0.5 relative'/>
+                onClick={() => setIconDrop(!iconDrop)} color={`${isDarkTheme ? 'white' : 'black'}`} className='h-6 w-6  top-[1px] relative'/>
              
               {iconDrop && (
                 <div

@@ -263,7 +263,7 @@ const PlaceOrder = () => {
           <hr className={`w-full h-[2px] ${isDarkTheme ? 'bg-gray-500' : 'bg-slate-500'}`} />
           <div className="subtotal flex justify-between">
             <p>Total</p>
-            <p className="mr-4">${totalCartItemPrice() !== 0 ? totalCartItemPrice()*20 + 40 : 0}</p>
+            <p className="mr-4">&#8377;{totalCartItemPrice() !== 0 ? totalCartItemPrice()*20 + 40 : 0}</p>
           </div>
           <hr className={`w-full h-[2px] ${isDarkTheme ? 'bg-gray-500' : 'bg-slate-500'}`} />
           <div className="b mr-3 flex justify-end">

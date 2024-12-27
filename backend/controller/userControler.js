@@ -16,7 +16,7 @@ const createToken = (id) => {
 const loginUser = async (req, res) => {
   try {
     const { email, password } = req.body;
-    console.log(email,password)
+    // console.log(email,password)
 
     // Check if fields are missing
     if (!email || !password) {
