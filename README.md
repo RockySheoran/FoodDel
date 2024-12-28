@@ -28,7 +28,7 @@ This is a full-stack food ordering(FoodDel) web application built using the MERN
 - **Payment Gateway:** Stripe
 - **Database:** MongoDB
 - **Authentication:** JWT (JSON Web Tokens)
-- **Styling:** CSS
+- **Styling:** Tailwind CSS
 
 ## Installation
 ### Prerequisites
