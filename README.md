@@ -135,7 +135,7 @@ Use the admin panel to manage orders, menu items.
 ![Screenshot 2024-12-29 141521](https://github.com/user-attachments/assets/c2f10f66-d096-4959-9007-e4cf0e52f2b1)
 
 ## API Documentation
-The API endpoints for the backend can be documented using tools like Postman or Swagger. Include endpoints for user authentication, menu items, orders, and more.
+The API endpoints for the backend can be documented using tools like Postman or fetch by axios. Include endpoints for user authentication, menu items, orders, and more.
 
 ## Contributing
 Contributions are welcome! Please fork the repository and create a pull request with your changes. Make sure to follow the code style and include relevant tests.
