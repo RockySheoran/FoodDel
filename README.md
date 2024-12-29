@@ -1,5 +1,6 @@
 # Food Ordering(FoodDel) Web App (MERN Stack)
-  - [URL] https://fooddel-frontend4.onrender.com
+  - [User-URL] https://fooddel-frontend4.onrender.com
+  - [Admin-URL] (https://fooddeladmin.onrender.com)
 ## Table of Contents
 - [Introduction](#introduction)
 - [Features](#features)
