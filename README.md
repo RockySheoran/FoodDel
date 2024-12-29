@@ -127,7 +127,12 @@ Pay using dummy visa card
 Use the admin panel to manage orders, menu items.
 
 ## Screenshots
-
+![Screenshot 2024-12-29 141251](https://github.com/user-attachments/assets/223f96ad-9a74-4331-93ad-7c58ac7bbcc9)
+![Screenshot 2024-12-29 141308](https://github.com/user-attachments/assets/d09d6c1f-6ce4-4779-9618-ee18e0a4e7c1)
+![Screenshot 2024-12-29 141401](https://github.com/user-attachments/assets/e4c8fe34-0224-4bfb-a24e-58ae1a6cd76c)
+![Screenshot 2024-12-29 141430](https://github.com/user-attachments/assets/e2ca26b4-279b-43d4-a5e6-c264a0e8fe64)
+![Screenshot 2024-12-29 141450](https://github.com/user-attachments/assets/fb0246e0-3d70-4ec9-8da1-fbf50b65e895)
+![Screenshot 2024-12-29 141521](https://github.com/user-attachments/assets/c2f10f66-d096-4959-9007-e4cf0e52f2b1)
 
 ## API Documentation
 The API endpoints for the backend can be documented using tools like Postman or Swagger. Include endpoints for user authentication, menu items, orders, and more.
