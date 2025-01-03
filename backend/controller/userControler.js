@@ -43,7 +43,7 @@ const loginUser = async (req, res) => {
       sameSite: "strict", // Prevents CSRF attacks by disallowing cross-site cookie usage
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days in milliseconds
     });
-    
+
     res.status(200).json({
       success: true,
       message: "Login successful",
@@ -107,7 +107,7 @@ const registerUser = async (req, res) => {
       sameSite: "strict", // Prevents CSRF attacks by disallowing cross-site cookie usage
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days in milliseconds
     });
-    
+
     res.status(201).json({
       success: true,
       message: "User registered successfully",

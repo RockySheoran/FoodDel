@@ -1,18 +1,16 @@
-
-
-import React from 'react';
-import { assets } from '../../assets/frontend_assets/assets';
-import { useTheme } from '../StoreContext/ThemeProvider';
-
+import React from "react";
+import { assets } from "../../assets/frontend_assets/assets";
+import { useTheme } from "../StoreContext/ThemeProvider";
 
 const AppDownload = () => {
   const { isDarkTheme } = useTheme();
 
   return (
     <div
-      className={`App_download text-center mb-5 ${isDarkTheme ? ' text-white' : ' text-black'}`}
-      id="app_download"
-    >
+      className={`App_download text-center mb-5 ${
+        isDarkTheme ? " text-white" : " text-black"
+      }`}
+      id="app_download">
       <p className="text-2xl overflow-y-hidden md:text-5xl mb-4">
         For Better Experience Download <br /> xyz App
       </p>
@@ -33,4 +31,3 @@ const AppDownload = () => {
 };
 
 export default AppDownload;
-

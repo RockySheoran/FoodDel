@@ -1,11 +1,8 @@
-
-
-import React, { useState } from 'react';
-import { assets } from '../../assets/admin_assets/assets';
-import { toast } from 'react-toastify';
-import axios from 'axios';
-import { useTheme } from '../StoreContext/ThemeProvider';
-
+import React, { useState } from "react";
+import { assets } from "../../assets/admin_assets/assets";
+import { toast } from "react-toastify";
+import axios from "axios";
+import { useTheme } from "../StoreContext/ThemeProvider";
 
 const Add_Item = ({ url }) => {
   const { isDarkTheme } = useTheme();
@@ -49,8 +46,9 @@ const Add_Item = ({ url }) => {
 
   return (
     <div
-      className={`add_item mx-3 md:ml-14 mt-5 ${isDarkTheme ? 'bg-gray-900 text-white' : 'bg-white text-black'}`}
-    >
+      className={`add_item mx-3 md:ml-14 mt-5 ${
+        isDarkTheme ? "bg-gray-900 text-white" : "bg-white text-black"
+      }`}>
       <form onSubmit={onSubmitHandler}>
         <div className="image">
           <label htmlFor="image">Image Upload:</label>
@@ -79,7 +77,11 @@ const Add_Item = ({ url }) => {
             value={data.name}
             type="text"
             required
-            className={`border-2 rounded px-3 py-1 w-full outline-0 transition placeholder-gray-500 ${isDarkTheme ? 'border-gray-600 focus:border-red-300  text-white bg-black' : ' bg-white border-gray-300 text-black  focus:border-red-500 focus:ring-red-500'}`}
+            className={`border-2 rounded px-3 py-1 w-full outline-0 transition placeholder-gray-500 ${
+              isDarkTheme
+                ? "border-gray-600 focus:border-red-300  text-white bg-black"
+                : " bg-white border-gray-300 text-black  focus:border-red-500 focus:ring-red-500"
+            }`}
             name="name"
             id="name"
             placeholder="Enter here name"
@@ -92,12 +94,15 @@ const Add_Item = ({ url }) => {
             value={data.description}
             name="description"
             required
-            className={`border p-1 rounded py-1 outline-0 ${isDarkTheme ? 'border-gray-600 focus:border-red-300  text-white bg-black' : ' bg-white border-gray-300 text-black  focus:border-red-500 focus:ring-red-500'}`}
+            className={`border p-1 rounded py-1 outline-0 ${
+              isDarkTheme
+                ? "border-gray-600 focus:border-red-300  text-white bg-black"
+                : " bg-white border-gray-300 text-black  focus:border-red-500 focus:ring-red-500"
+            }`}
             id="description"
             placeholder="Write content here"
             cols="50"
-            rows="3"
-          ></textarea>
+            rows="3"></textarea>
         </div>
         <div className="group grid grid-cols-2 gap-3">
           <div className="product_category flex flex-col gap-2">
@@ -108,8 +113,11 @@ const Add_Item = ({ url }) => {
               required
               name="category"
               id="category"
-              className={`border rounded-md h-8 outline-0 ${isDarkTheme ? 'border-gray-600 focus:border-red-300  text-white bg-black' : ' bg-white border-gray-300 text-black  focus:border-red-500 focus:ring-red-500'}`}
-            >
+              className={`border rounded-md h-8 outline-0 ${
+                isDarkTheme
+                  ? "border-gray-600 focus:border-red-300  text-white bg-black"
+                  : " bg-white border-gray-300 text-black  focus:border-red-500 focus:ring-red-500"
+              }`}>
               <option value="Churma">Churma</option>
               <option value="Salad">Salad</option>
               <option value="Rolls">Rolls</option>
@@ -132,14 +140,19 @@ const Add_Item = ({ url }) => {
               name="price"
               id="price"
               placeholder="$20"
-              className={`border rounded-md py-1 pl-2 outline-0 ${isDarkTheme ? 'border-gray-600 focus:border-red-300  text-white bg-black' : ' bg-white border-gray-300 text-black  focus:border-red-500 focus:ring-red-500'}`}
+              className={`border rounded-md py-1 pl-2 outline-0 ${
+                isDarkTheme
+                  ? "border-gray-600 focus:border-red-300  text-white bg-black"
+                  : " bg-white border-gray-300 text-black  focus:border-red-500 focus:ring-red-500"
+              }`}
             />
           </div>
         </div>
         <button
           type="submit"
-          className={`border rounded-lg mt-4 w-20 py-1 ${isDarkTheme ? 'bg-gray-700 text-white' : 'bg-blue-500 text-white'}`}
-        >
+          className={`border rounded-lg mt-4 w-20 py-1 ${
+            isDarkTheme ? "bg-gray-700 text-white" : "bg-blue-500 text-white"
+          }`}>
           Add
         </button>
       </form>
@@ -148,4 +161,3 @@ const Add_Item = ({ url }) => {
 };
 
 export default Add_Item;
-

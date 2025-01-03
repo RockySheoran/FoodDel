@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect } from "react";
 
 // Create a context for theme management
 const ThemeContext = createContext();
@@ -8,15 +8,15 @@ export const ThemeProvider = ({ children }) => {
 
   useEffect(() => {
     // Check local storage for theme preference
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
       setIsDarkTheme(true);
-      document.documentElement.classList.add('bg-dark', 'text-white');
-      document.documentElement.classList.remove('bg-white', 'text-black');
+      document.documentElement.classList.add("bg-dark", "text-white");
+      document.documentElement.classList.remove("bg-white", "text-black");
     } else {
       setIsDarkTheme(false);
-      document.documentElement.classList.add('bg-white', 'text-black');
-      document.documentElement.classList.remove('bg-dark', 'text-white');
+      document.documentElement.classList.add("bg-white", "text-black");
+      document.documentElement.classList.remove("bg-dark", "text-white");
     }
   }, []);
 
@@ -24,13 +24,13 @@ export const ThemeProvider = ({ children }) => {
     setIsDarkTheme((prev) => {
       const newTheme = !prev;
       if (newTheme) {
-        document.documentElement.classList.add('bg-dark', 'text-white');
-        document.documentElement.classList.remove('bg-white', 'text-black');
-        localStorage.setItem('theme', 'dark');
+        document.documentElement.classList.add("bg-dark", "text-white");
+        document.documentElement.classList.remove("bg-white", "text-black");
+        localStorage.setItem("theme", "dark");
       } else {
-        document.documentElement.classList.add('bg-white', 'text-black');
-        document.documentElement.classList.remove('bg-dark', 'text-white');
-        localStorage.setItem('theme', 'light');
+        document.documentElement.classList.add("bg-white", "text-black");
+        document.documentElement.classList.remove("bg-dark", "text-white");
+        localStorage.setItem("theme", "light");
       }
       return newTheme;
     });

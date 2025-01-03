@@ -1,4 +1,4 @@
-import  foodModel  from "../models/foodModel.js";
+import foodModel from "../models/foodModel.js";
 import fs from "fs";
 
 
@@ -10,9 +10,9 @@ const addFood = async (req, res) => {
         return res.status(400).json({ success: false, message: 'No file uploaded' });
     }
 
-    const food_image = `${req.file.filename}` ;
-      
-   
+    const food_image = `${req.file.filename}`;
+
+
     if (!food_image) {
         return res.status(400).json({ success: false, message: "Image upload failed" });
     }
@@ -29,7 +29,7 @@ const addFood = async (req, res) => {
             price: req.body.price,
             category: req.body.category,
             description: req.body.description,
-            image:food_image,
+            image: food_image,
         });
 
         await newFoodModel.save();
@@ -41,14 +41,14 @@ const addFood = async (req, res) => {
 };
 
 // find all list of food
-const findFoodList  = async(req,res) =>{
-    try{
-        const foodList  =await foodModel.find({});
-        res.json({status:true,data:foodList})
+const findFoodList = async (req, res) => {
+    try {
+        const foodList = await foodModel.find({});
+        res.json({ status: true, data: foodList })
         // console.log("fwf")
     }
-    catch(e){
-        res.json({status:false,message:"error of find list"})
+    catch (e) {
+        res.json({ status: false, message: "error of find list" })
     }
 
 }
@@ -56,17 +56,17 @@ const findFoodList  = async(req,res) =>{
 
 // remove the specific food
 
-const removeList =  async(req,res) =>{
+const removeList = async (req, res) => {
     try {
-        const foodItem  = await foodModel.findById(req.body.id);
-        fs.unlink(`uploads/${foodItem.image}`, () =>{})
+        const foodItem = await foodModel.findById(req.body.id);
+        fs.unlink(`uploads/${foodItem.image}`, () => { })
         await foodModel.findByIdAndDelete(req.body.id)
-        res.json({success:true,message:"food removed"});
+        res.json({ success: true, message: "food removed" });
 
     } catch (error) {
-        res.json({success:true,message:"error of find food item"});
-        
+        res.json({ success: true, message: "error of find food item" });
+
     }
 }
 
-export {addFood,findFoodList,removeList}
+export { addFood, findFoodList, removeList }

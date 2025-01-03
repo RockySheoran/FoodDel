@@ -1,27 +1,27 @@
 import mongoose, { Types } from "mongoose";
 
-const userSchema  = new mongoose.Schema({
-    name:{
+const userSchema = new mongoose.Schema({
+    name: {
         type: String,
-        required:true,
+        required: true,
     },
-    email:{
+    email: {
         type: String,
-        required:true,
-        unique:true,
+        required: true,
+        unique: true,
     },
-    password:{
+    password: {
         type: String,
-        required:true,
+        required: true,
     },
     cartData: { type: Object, default: {} },
     favData: { type: Object, default: {} }
-},{minimize:false})
+}, { minimize: false })
 
 
 
 
-const userModel = mongoose.models.user || mongoose.model("user",userSchema)
+const userModel = mongoose.models.user || mongoose.model("user", userSchema)
 
 
 export default userModel; 

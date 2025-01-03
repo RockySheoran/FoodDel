@@ -51,36 +51,36 @@ const addToCart = async (req, res) => {
     }
 };
 
-const removeToCart = async(req,res) =>{
+const removeToCart = async (req, res) => {
     try {
         let userData = await userModel.findById(req.body.userId);
         let cartData = await userData.cartData;
 
-        if(cartData[req.body.itemId]>0){
-            cartData[req.body.itemId]  -=1;
+        if (cartData[req.body.itemId] > 0) {
+            cartData[req.body.itemId] -= 1;
         }
         userData.markModified('cartData');
         await userData.save();
-        res.json({success:true,message:"removed from Cart",cartData: userData.cartData })
+        res.json({ success: true, message: "removed from Cart", cartData: userData.cartData })
     } catch (error) {
-        res.json({success:false,message:"Error"});
-        
+        res.json({ success: false, message: "Error" });
+
     }
-   
+
 
 }
-const getToCart = async(req,res) =>{
-try {
-    let userData = await userModel.findById(req.body.userId);
-    let cartData = await userData.cartData;
+const getToCart = async (req, res) => {
+    try {
+        let userData = await userModel.findById(req.body.userId);
+        let cartData = await userData.cartData;
 
-    res.json({success:true,message:"get from Cart",cartData: userData.cartData })
-} catch (error) {
-    res.json({success:false,message:"Error"});
+        res.json({ success: true, message: "get from Cart", cartData: userData.cartData })
+    } catch (error) {
+        res.json({ success: false, message: "Error" });
+    }
 }
-}
 
 
-export {addToCart, removeToCart, getToCart};
+export { addToCart, removeToCart, getToCart };
 
 

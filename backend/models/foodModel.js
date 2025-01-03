@@ -3,19 +3,19 @@ import mongoose from 'mongoose'
 
 
 const foodSchema = new mongoose.Schema({
-    name: { type: String, required: true },
-    price: { type: Number, required: true },
-    category: { type: String, required: true },
-    description: { type: String , required:true},
-    image:{type:String,required:true},
-   
-  });
+  name: { type: String, required: true },
+  price: { type: Number, required: true },
+  category: { type: String, required: true },
+  description: { type: String, required: true },
+  image: { type: String, required: true },
+
+});
 
 
 
 
- const foodModel  =mongoose.models.foodDel ||  mongoose.model("foodDel",foodSchema);
+const foodModel = mongoose.models.foodDel || mongoose.model("foodDel", foodSchema);
 
 
 
- export default foodModel;
+export default foodModel;

@@ -4,7 +4,7 @@ import feedbackModel from "../models/FeedBackModel.js";
 // Function to handle feedback submission
 export const submitFeedback = async (req, res) => {
   const { name, email, rating, comments } = req.body;
-          
+
   // Validate input
   if (!name || !email || !rating || !comments) {
     return res.status(400).json({ success: false, message: "All fields are required." });
@@ -14,7 +14,7 @@ export const submitFeedback = async (req, res) => {
     // Create new feedback
     const feedback = new feedbackModel({ name, email, rating, comments });
     await feedback.save();
- 
+
     res.status(201).json({ success: true, message: "Feedback submitted successfully!" });
   } catch (error) {
     console.error("Error submitting feedback:", error);

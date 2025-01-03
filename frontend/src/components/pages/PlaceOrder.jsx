@@ -1,14 +1,12 @@
-
-
-import React, { useContext, useState } from 'react';
-import { StoreContext } from '../StoreContext/StoreContext';
-import axios from 'axios';
-import { toast } from 'react-toastify';
-import { useTheme } from '../StoreContext/ThemeProvider';
-
+import React, { useContext, useState } from "react";
+import { StoreContext } from "../StoreContext/StoreContext";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { useTheme } from "../StoreContext/ThemeProvider";
 
 const PlaceOrder = () => {
-  const { cartItem, totalCartItemPrice, token, food_list, url } = useContext(StoreContext);
+  const { cartItem, totalCartItemPrice, token, food_list, url } =
+    useContext(StoreContext);
   const { isDarkTheme } = useTheme();
 
   const [formData, setFormData] = useState({
@@ -46,8 +44,10 @@ const PlaceOrder = () => {
       amount: totalCartItemPrice() + 2,
     };
 
-    const response = await axios.post(`${url}/api/order/place`, orderData, { headers: { token } });
-       console.log(response)
+    const response = await axios.post(`${url}/api/order/place`, orderData, {
+      headers: { token },
+    });
+    console.log(response);
     if (response.data.success) {
       const { session_url } = response.data;
       window.location.replace(session_url);
@@ -59,10 +59,14 @@ const PlaceOrder = () => {
   return (
     <form
       onSubmit={handleOrderSubmit}
-      className={`place-order-page grid grid-cols-1 xl:grid-cols-2 container rounded-md min-h-fit lg:min-h-screen ${isDarkTheme ? 'bg-gray-900 text-white' : 'bg-gray-100 text-black'}`}
-    >
+      className={`place-order-page grid grid-cols-1 xl:grid-cols-2 container rounded-md min-h-fit lg:min-h-screen ${
+        isDarkTheme ? "bg-gray-900 text-white" : "bg-gray-100 text-black"
+      }`}>
       <div className="flex items-center justify-center my-8">
-        <div className={`${isDarkTheme ? 'bg-gray-800' : 'bg-white'} p-6 rounded-lg shadow-lg w-full max-w-lg`}>
+        <div
+          className={`${
+            isDarkTheme ? "bg-gray-800" : "bg-white"
+          } p-6 rounded-lg shadow-lg w-full max-w-lg`}>
           <h2 className="text-2xl font-bold mb-4 text-center">
             Delivery Address
           </h2>
@@ -80,7 +84,11 @@ const PlaceOrder = () => {
                   value={formData.FirstName}
                   onChange={handleChange}
                   placeholder="Enter your First Name"
-                  className={`w-full  px-1 md:px-3 py-0.5 md:py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
+                  className={`w-full  px-1 md:px-3 py-0.5 md:py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                    isDarkTheme
+                      ? " text-white bg-black "
+                      : " text-black bg-white"
+                  }`}
                   required
                 />
               </div>
@@ -96,8 +104,11 @@ const PlaceOrder = () => {
                   value={formData.LastName}
                   onChange={handleChange}
                   placeholder="Enter your Last Name"
-                  className={`w-full px-1 md:px-3 py-0.5 md:py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
-
+                  className={`w-full px-1 md:px-3 py-0.5 md:py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                    isDarkTheme
+                      ? " text-white bg-black "
+                      : " text-black bg-white"
+                  }`}
                   required
                 />
               </div>
@@ -116,8 +127,11 @@ const PlaceOrder = () => {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Enter your email"
-                  className={`w-full px-1 md:px-3 py-0.5 md:py-2  border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
-
+                  className={`w-full px-1 md:px-3 py-0.5 md:py-2  border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                    isDarkTheme
+                      ? " text-white bg-black "
+                      : " text-black bg-white"
+                  }`}
                   required
                 />
               </div>
@@ -133,8 +147,11 @@ const PlaceOrder = () => {
                   value={formData.phoneNumber}
                   onChange={handleChange}
                   placeholder="Enter your phone number"
-                  className={`w-full px-1 md:px-3 py-0.5 md:py-2  border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
-
+                  className={`w-full px-1 md:px-3 py-0.5 md:py-2  border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                    isDarkTheme
+                      ? " text-white bg-black "
+                      : " text-black bg-white"
+                  }`}
                   required
                 />
               </div>
@@ -151,11 +168,11 @@ const PlaceOrder = () => {
                 value={formData.street}
                 onChange={handleChange}
                 placeholder="Enter your address"
-                className={`w-full px-1 md:px-3 py-0.5 md:py-2  border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
-
+                className={`w-full px-1 md:px-3 py-0.5 md:py-2  border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                  isDarkTheme ? " text-white bg-black " : " text-black bg-white"
+                }`}
                 rows="3"
-                required
-              ></textarea>
+                required></textarea>
             </div>
 
             {/* City and State */}
@@ -171,8 +188,11 @@ const PlaceOrder = () => {
                   value={formData.city}
                   onChange={handleChange}
                   placeholder="Enter your city"
-                  className={`w-full px-1 md:px-3 py-0.5 md:py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
-
+                  className={`w-full px-1 md:px-3 py-0.5 md:py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                    isDarkTheme
+                      ? " text-white bg-black "
+                      : " text-black bg-white"
+                  }`}
                   required
                 />
               </div>
@@ -188,8 +208,11 @@ const PlaceOrder = () => {
                   value={formData.state}
                   onChange={handleChange}
                   placeholder="Enter your state"
-                  className={`w-full px-1 md:px-3 py-0.5 md:py-2  border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
-
+                  className={`w-full px-1 md:px-3 py-0.5 md:py-2  border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                    isDarkTheme
+                      ? " text-white bg-black "
+                      : " text-black bg-white"
+                  }`}
                   required
                 />
               </div>
@@ -208,8 +231,11 @@ const PlaceOrder = () => {
                   value={formData.zipCode}
                   onChange={handleChange}
                   placeholder="Enter your ZIP code"
-                  className={`w-full px-1 md:px-3 py-0.5 md:py-2  border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
-
+                  className={`w-full px-1 md:px-3 py-0.5 md:py-2  border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                    isDarkTheme
+                      ? " text-white bg-black "
+                      : " text-black bg-white"
+                  }`}
                   required
                 />
               </div>
@@ -225,8 +251,11 @@ const PlaceOrder = () => {
                   value={formData.Country}
                   onChange={handleChange}
                   placeholder="Enter your Country name"
-                  className={`w-full px-1 md:px-3 py-0.5 md:py-2  border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isDarkTheme ? ' text-white bg-black ' : ' text-black bg-white'}`}
-
+                  className={`w-full px-1 md:px-3 py-0.5 md:py-2  border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                    isDarkTheme
+                      ? " text-white bg-black "
+                      : " text-black bg-white"
+                  }`}
                   required
                 />
               </div>
@@ -234,8 +263,7 @@ const PlaceOrder = () => {
 
             <button
               type="submit"
-              className="w-full  bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            >
+              className="w-full  bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
               Submit Address
             </button>
           </div>
@@ -243,35 +271,60 @@ const PlaceOrder = () => {
       </div>
 
       <div className="right-div flex items-center mt-2 mb-10 justify-center">
-        <div className={`${isDarkTheme ? 'bg-gray-800' : 'bg-white'} p-6 rounded-lg shadow-lg w-full max-w-lg ml-auto`}>
+        <div
+          className={`${
+            isDarkTheme ? "bg-gray-800" : "bg-white"
+          } p-6 rounded-lg shadow-lg w-full max-w-lg ml-auto`}>
           <h3>Cart Total</h3>
-          <hr className={`w-full h-[2px] ${isDarkTheme ? 'bg-gray-500' : 'bg-slate-500'}`} />
+          <hr
+            className={`w-full h-[2px] ${
+              isDarkTheme ? "bg-gray-500" : "bg-slate-500"
+            }`}
+          />
           <div className="subtotal flex justify-between">
             <p>Item Count</p>
             <p className="mr-4">{Object.keys(cartItem).length}</p>
           </div>
-          <hr className={`w-full h-[2px] ${isDarkTheme ? 'bg-gray-500' : 'bg-slate-500'}`} />
+          <hr
+            className={`w-full h-[2px] ${
+              isDarkTheme ? "bg-gray-500" : "bg-slate-500"
+            }`}
+          />
           <div className="subtotal flex justify-between">
             <p>SubTotal</p>
-            <p className="mr-4">&#8377;{totalCartItemPrice()*20}</p>
+            <p className="mr-4">&#8377;{totalCartItemPrice() * 20}</p>
           </div>
-          <hr className={`w-full h-[2px] ${isDarkTheme ? 'bg-gray-500' : 'bg-slate-500'}`} />
+          <hr
+            className={`w-full h-[2px] ${
+              isDarkTheme ? "bg-gray-500" : "bg-slate-500"
+            }`}
+          />
           <div className="subtotal flex justify-between">
             <p>Delivery Fee</p>
             <p className="mr-4">&#8377;{totalCartItemPrice() !== 0 ? 40 : 0}</p>
           </div>
-          <hr className={`w-full h-[2px] ${isDarkTheme ? 'bg-gray-500' : 'bg-slate-500'}`} />
+          <hr
+            className={`w-full h-[2px] ${
+              isDarkTheme ? "bg-gray-500" : "bg-slate-500"
+            }`}
+          />
           <div className="subtotal flex justify-between">
             <p>Total</p>
-            <p className="mr-4">&#8377;{totalCartItemPrice() !== 0 ? totalCartItemPrice()*20 + 40 : 0}</p>
+            <p className="mr-4">
+              &#8377;
+              {totalCartItemPrice() !== 0 ? totalCartItemPrice() * 20 + 40 : 0}
+            </p>
           </div>
-          <hr className={`w-full h-[2px] ${isDarkTheme ? 'bg-gray-500' : 'bg-slate-500'}`} />
+          <hr
+            className={`w-full h-[2px] ${
+              isDarkTheme ? "bg-gray-500" : "bg-slate-500"
+            }`}
+          />
           <div className="b mr-3 flex justify-end">
             <button
               type="submit"
               className="bg-red-600 px-2 py-1 rounded-lg text-white"
-              style={{ textDecoration: 'none' }}
-            >
+              style={{ textDecoration: "none" }}>
               PROCESS TO PAYMENT
             </button>
           </div>
