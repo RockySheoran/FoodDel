@@ -166,10 +166,10 @@ const Navbar = ({ setLoginCheck }) => {
                   className={`h-5 w-5 top-[1.5px] left-2.5 absolute  overflow-visible  translate-y-[-7px] cursor-pointer z-[9999999]  ${
                     isDarkTheme ? " text-white" : "  text-black"
                   } `}>
-                  {Object.keys(cartItem).length === 0 ? (
+                  {Object?.keys(cartItem).length === 0 ? (
                     <span className="text-rose-700">!</span>
                   ) : (
-                    Object.keys(cartItem).length
+                    Object?.keys(cartItem).length
                   )}
                 </span>
               </div>

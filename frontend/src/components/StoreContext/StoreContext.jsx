@@ -36,8 +36,8 @@ const StoreContextProvider = (props) => {
       };
 
       // Remove items with 0 quantity
-      const filteredCart = Object.fromEntries(
-        Object.entries(updatedCart).filter(([_, qty]) => qty > 0)
+      const filteredCart = Object?.fromEntries(
+        Object?.entries(updatedCart).filter(([_, qty]) => qty > 0)
       );
 
       return filteredCart;
@@ -66,8 +66,8 @@ const StoreContextProvider = (props) => {
       };
 
       // Remove items with 0 quantity
-      const filteredCart = Object.fromEntries(
-        Object.entries(updatedCart).filter(([_, qty]) => qty > 0)
+      const filteredCart = Object?.fromEntries(
+        Object?.entries(updatedCart).filter(([_, qty]) => qty > 0)
       );
 
       return filteredCart;
@@ -142,8 +142,8 @@ const StoreContextProvider = (props) => {
     setFav((pre) => {
       const favItem = { ...pre, [itemId]: (pre[itemId] || 0) + 1 };
 
-      const filterItem_Fav = Object.fromEntries(
-        Object.entries(favItem).filter(([_, qty]) => qty > 0)
+      const filterItem_Fav = Object?.fromEntries(
+        Object?.entries(favItem).filter(([_, qty]) => qty > 0)
       );
       return filterItem_Fav;
     });
@@ -167,7 +167,7 @@ const StoreContextProvider = (props) => {
       const favItem = { ...pre, [itemId]: (pre[itemId] || 0) - 1 };
 
       const filterItem_Fav = Object.fromEntries(
-        Object.entries(favItem).filter(([_, qty]) => qty > 0)
+        Object?.entries(favItem).filter(([_, qty]) => qty > 0)
       );
       return filterItem_Fav;
     });
@@ -199,8 +199,8 @@ const StoreContextProvider = (props) => {
       const updatedCart = response.data.favData;
 
       // Remove items with 0 quantity
-      const filteredCart = Object.fromEntries(
-        Object.entries(updatedCart).filter(([_, qty]) => qty > 0)
+      const filteredCart = Object?.fromEntries(
+        Object?.entries(updatedCart).filter(([_, qty]) => qty > 0)
       );
 
       return filteredCart;

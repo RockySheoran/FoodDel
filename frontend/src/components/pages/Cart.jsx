@@ -16,7 +16,7 @@ const Cart = ({ loginCheck, setLoginCheck }) => {
   const { isDarkTheme } = useTheme();
 
   const oncheckItem = () => {
-    if (Object.keys(cartItem).length <= 0 && token) {
+    if (Object?.keys(cartItem).length <= 0 && token) {
       toast.warning("Cart is empty");
     }
     if (!token) {
