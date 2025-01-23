@@ -1,10 +1,10 @@
-import React from "react";
-import { assets } from "../assets/admin_assets/assets";
-import { useTheme } from "./StoreContext/ThemeProvider";
-import { useState } from "react";
+import React from "react"
+import { assets } from "../assets/admin_assets/assets"
+import { useTheme } from "./StoreContext/ThemeProvider"
+import { useState } from "react"
 
 const Navbar = () => {
-  const { isDarkTheme, toggleTheme } = useTheme();
+  const { isDarkTheme, toggleTheme } = useTheme()
 
   return (
     <div className="div w-full !mb-20 overflow-y-hidden ">
@@ -13,7 +13,10 @@ const Navbar = () => {
           isDarkTheme ? "bg-gray-900 text-white" : "bg-white text-black"
         }`}>
         <div className="div flex justify-between w-full md:px-9">
-          <img className="max-w-28 min-w-14" src={assets.logo} alt="logo" />
+          {/* <img className="max-w-28 min-w-14" src={assets.logo} alt="logo" /> */}
+          <h1 className={` ${isDarkTheme ? "" : "text-gray-700"} `}>
+            Food<span className="text-red-500">Del</span>
+          </h1>
           <div className="flex items-center gap-4  ">
             <button
               onClick={toggleTheme}
@@ -26,7 +29,7 @@ const Navbar = () => {
         </div>
       </nav>
     </div>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

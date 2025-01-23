@@ -137,7 +137,7 @@ const Register = ({
               }
               className="relative cursor-pointer z-100 bottom-[29px] sm:bottom-[28px] sm:left-[295px] left-[230px] text-2xl w-5  "
               id="password">
-              {passShow.password == false ? <IoEye /> : <IoEyeOff />}
+              {passShow.password == false ? <IoEye /> : <IoEyeOff  />}
             </span>
           </div>
 

@@ -50,12 +50,15 @@ const Navbar = ({ setLoginCheck }) => {
 
             <div className="text-xl font-bold ">
               <figure className="figure relative top-2 ">
-                <Link to="/">
-                  <img
+                <Link to="/" className={` ${isDarkTheme ?"text-white":'text-gray-700'}`}>
+                  {/* <img
                     src={assets.logo}
                     className="figure-img  rounded !h-8 w-24 md:w-full pl-2 md:pl-1"
                     alt="logo"
-                  />
+                  /> */}
+                  <h1 className={` ${isDarkTheme ? "" : "text-gray-700"} `}>
+                    Food<span className="text-red-500">Del</span>
+                  </h1>
                 </Link>
               </figure>
             </div>
@@ -399,7 +402,7 @@ const Navbar = ({ setLoginCheck }) => {
         </nav>
       </nav>
     </div>
-  );
+  )
 };
 
 export default Navbar;
