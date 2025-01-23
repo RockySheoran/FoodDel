@@ -73,7 +73,7 @@ function App() {
       {/* <ToastContainer 
         autoClose={3000}/> */}
 
-      <ToastContainer autoClose={autoCloseTime} />
+      <ToastContainer autoClose={autoCloseTime} className="z-[9999999999]" />
 
       <Navbar setLoginCheck={setLoginCheck} />
       <Routes>
