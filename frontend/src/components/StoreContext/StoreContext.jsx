@@ -98,10 +98,11 @@ const StoreContextProvider = (props) => {
     // setCartItem(response.data.cartData);
     setCartItem(() => {
       const updatedCart = response.data.cartData;
+      // console.log(updatedCart)
 
       // Remove items with 0 quantity
-      const filteredCart = Object.fromEntries(
-        Object.entries(updatedCart).filter(([_, qty]) => qty > 0)
+      const filteredCart = Object?.fromEntries(
+        Object?.entries(updatedCart)?.filter(([_, qty]) => qty > 0)
       );
 
       return filteredCart;

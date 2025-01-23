@@ -27,7 +27,7 @@ const FoodDisplay = ({ category }) => {
           id="food-display">
           <h1>Top dishes near you</h1>
           <div className="food_Container gap-4 grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 my-6 justify-items-center md:grid-cols-3 mx-auto">
-            {food_list.map((item, index) => {
+            {food_list?.map((item, index) => {
               if (category === "All" || category === item.category) {
                 return (
                   <Food_Item
