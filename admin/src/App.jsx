@@ -13,7 +13,7 @@ import { useTheme } from "./component/StoreContext/ThemeProvider";
 const App = () => {
   const { isDarkTheme } = useTheme();
 
-  const url = "https://fooddel-backend3.onrender.com";
+  const url = "https://fooddel-backend-jmiz.onrender.com"
   const [autoCloseTime, setAutoCloseTime] = useState(1000);
 
   useEffect(() => {

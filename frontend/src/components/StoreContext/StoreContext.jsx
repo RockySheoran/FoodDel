@@ -20,7 +20,7 @@ const StoreContextProvider = (props) => {
   const url =
     window.location.hostname === "localhost"
       ? "http://localhost:5000"
-      : " https://fooddel-backend3.onrender.com";
+      : "https://fooddel-backend-jmiz.onrender.com"
 
   console.log("API URL:", url);
 
