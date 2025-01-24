@@ -14,7 +14,18 @@ const Footer = () => {
       id="Footer">
       <div className="footer_content container mt-5 grid grid-cols-2 md:grid-cols-3 content-center">
         <div className="footer_start gap-3 col-12 col-span-2 sm:col-span-1">
-          <img src={assets.logo} className="mb-2" alt="logo" />
+        <figure className="figure relative top-2 ">
+                        <Link to="/" className={` ${isDarkTheme ?"text-white":'text-gray-700'}`}>
+                          {/* <img
+                            src={assets.logo}
+                            className="figure-img  rounded !h-8 w-24 md:w-full pl-2 md:pl-1"
+                            alt="logo"
+                          /> */}
+                          <h1 className={` ${isDarkTheme ? "" : "text-gray-700"} `}>
+                            Food<span className="text-red-500">Del</span>
+                          </h1>
+                        </Link>
+                      </figure>
           <p className="lg:w-96 my-3 sm:w-56 w-80">
             Delicious meals delivered fast to your doorstep, ensuring freshness,
             quality, and ultimate convenience every time.
