@@ -128,13 +128,14 @@ Pay using dummy visa card
 Use the admin panel to manage orders, menu items.
 
 ## Screenshots
-![Screenshot 2024-12-29 141251](https://github.com/user-attachments/assets/223f96ad-9a74-4331-93ad-7c58ac7bbcc9)
-![Screenshot 2024-12-29 141308](https://github.com/user-attachments/assets/d09d6c1f-6ce4-4779-9618-ee18e0a4e7c1)
-![Screenshot 2024-12-29 141401](https://github.com/user-attachments/assets/e4c8fe34-0224-4bfb-a24e-58ae1a6cd76c)
-![Screenshot 2024-12-29 141430](https://github.com/user-attachments/assets/e2ca26b4-279b-43d4-a5e6-c264a0e8fe64)
-![Screenshot 2024-12-29 141450](https://github.com/user-attachments/assets/fb0246e0-3d70-4ec9-8da1-fbf50b65e895)
-![Screenshot 2024-12-29 141521](https://github.com/user-attachments/assets/c2f10f66-d096-4959-9007-e4cf0e52f2b1)
-![Screenshot 2024-12-29 141925](https://github.com/user-attachments/assets/e9aa1a11-49bc-42dd-9815-5bbacaffebde)
+![Image](https://github.com/user-attachments/assets/2c756c20-173e-40be-8efc-4a53cc2c6a8d)
+![Image](https://github.com/user-attachments/assets/ce09b8be-f501-4c00-8af6-749b71abb6fc)
+![Image](https://github.com/user-attachments/assets/a09670d7-1759-4530-8976-9570ef1a8471)
+![Image](https://github.com/user-attachments/assets/1a3225c9-c7e2-49e1-8756-8668d68ddf68)
+![Image](https://github.com/user-attachments/assets/d225f520-592c-45af-9f9e-220c6986882c)
+![Image](https://github.com/user-attachments/assets/e7622984-2ba4-42f9-934d-f6418345f9ce)
+![Image](https://github.com/user-attachments/assets/9ad2aa70-f255-49d7-9766-403ce2859496)
+![Image](https://github.com/user-attachments/assets/c5419d56-31d8-4221-84ce-a368dd023bcd)
 
 
 ## API Documentation
