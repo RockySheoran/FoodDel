@@ -11,8 +11,8 @@ const placeOrder = async (req, res) => {
 
   // const frontendUrl = "http://localhost:5173" ;
 
-  // const frontendUrl = "https://fooddel-frontend4.onrender.com";
-  const frontendUrl = "https://food-del-frontend-plum.vercel.app";
+  const frontendUrl = "https://fooddel-frontend4.onrender.com";
+  // const frontendUrl = "https://food-del-frontend-plum.vercel.app";
 
 
   // console.log(req.body.userId);
