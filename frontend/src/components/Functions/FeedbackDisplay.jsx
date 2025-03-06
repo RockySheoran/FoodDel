@@ -35,7 +35,7 @@ const FeedbackDisplay = () => {
     const fetchFeedbacks = async () => {
       try {
         const response = await axios.get(`${url}/api/feedback/all`); // Replace with your API endpoint
-        console.log(response);
+        // console.log(response);
         setFeedbacks(response.data.data);
       } catch (error) {
         console.error("Error fetching feedbacks:", error);
@@ -44,7 +44,7 @@ const FeedbackDisplay = () => {
 
     fetchFeedbacks();
   }, []);
-  console.log(feedbacks);
+  // console.log(feedbacks);
 
   return (
     <div

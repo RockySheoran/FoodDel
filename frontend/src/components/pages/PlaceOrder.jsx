@@ -43,17 +43,22 @@ const PlaceOrder = () => {
       items: order_Item,
       amount: totalCartItemPrice() + 2,
     };
-
-    const response = await axios.post(`${url}/api/order/place`, orderData, {
+try {
+  const response = await axios.post(`${url}/api/order/place`, orderData, {
       headers: { token },
     });
     console.log(response);
     if (response.data.success) {
       const { session_url } = response.data;
       window.location.replace(session_url);
-    } else {
-      alert("Error placing order. Please try again.");
+      toast.success(response.data.message)
     }
+    
+  } catch (error) {
+  toast.success(error.response.data.message)
+  
+}
+     
   };
 
   return (

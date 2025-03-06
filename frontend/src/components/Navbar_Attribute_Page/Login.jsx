@@ -44,18 +44,24 @@ const Login = ({
     e.preventDefault();
     console.log(data);
     const newUrl = `${url}/api/user/login`;
-
-    const response = await axios.post(newUrl, data);
-    console.log(response);
-
-    if (response.data.success) {
-      setToken(response.data.token);
-      localStorage.setItem("token", response.data.token);
-      setLoginCheck(false);
-      toast.success("Login successful");
-    } else {
-      toast.error(response.data.message);
+    try {
+      const response = await axios.post(newUrl, data);
+      console.log(response);
+  
+      if (response.data.success) {
+        setToken(response.data.token);
+        localStorage.setItem("token", response.data.token);
+        setLoginCheck(false);
+        toast.success("Login successful");
+      } 
+      
+    } catch (error) {
+      
+      toast.error(error.response.data.message);
+      // console.log("dss")
     }
+
+    
   };
 
   return (

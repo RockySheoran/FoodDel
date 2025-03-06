@@ -18,6 +18,7 @@ const MyOrder = () => {
       {},
       { headers: { token } }
     );
+    console.log(response)
     if (response.data.success) {
       setLoding(true);
       toast.success("Data fetched");
