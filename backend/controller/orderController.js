@@ -11,7 +11,8 @@ const placeOrder = async (req, res) => {
 
   // const frontendUrl = "http://localhost:5173" ;
 
-  const frontendUrl = "https://fooddel-frontend4.onrender.com";
+  // const frontendUrl = "https://fooddel-frontend4.onrender.com";
+  const frontendUrl = "https://food-del-frontend-plum.vercel.app";
 
 
   // console.log(req.body.userId);
@@ -87,8 +88,11 @@ const verifyOrder = async (req, res) => {
 }
 // user order
 const userOrder = async (req, res) => {
+  // console.log(req.body.userId)
+  // console.log("x")
   try {
     const order = await orderModel.find({ userId: req.body.userId });
+    // console.log(order)
     res.json({ success: true, data: order })
 
   } catch (error) {
